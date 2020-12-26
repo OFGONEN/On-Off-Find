@@ -55,6 +55,7 @@
         "Packages/": true,
         "UserSettings": true,
         "Logs": true,
-        "*.md": true
+        "*.md": true,
+        "*.csproj": true
     }
 }

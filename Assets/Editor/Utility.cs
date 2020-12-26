@@ -18,5 +18,10 @@ namespace FFEditor
         {
             PlayerPrefs.DeleteAll();
         }
+        [MenuItem("FFStudios/Save All Assets")]
+        static void SaveAllAssets()
+        {
+            AssetDatabase.SaveAssets();
+        }
     }
 }
