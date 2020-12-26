@@ -15,7 +15,7 @@ namespace FFStudio
         public abstract void StartTutorial();
         public abstract void SetHelperAssetDatas();
         public abstract void EndTutorial(bool success);
-        public abstract void ForseEndTutorial();
+        public abstract void ForceEndTutorial();
         // public abstract UIHelperAsset GetHelperAsset(string assetName);
 
     }
