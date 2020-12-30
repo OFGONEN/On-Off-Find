@@ -22,7 +22,6 @@ public class DisappearingEntity : Entity
     public void Reappear()
     {
         gameObject.SetActive(true);
-        // entityParticleSystem.Play();
         disappearedEntitySet.RemoveDictionary(entityName);
     }
 }

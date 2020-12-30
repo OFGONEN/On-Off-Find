@@ -7,8 +7,8 @@ namespace FFStudio
     public abstract class CurrentLevelData : ScriptableObject
     {
         public int currentLevel;
-        public GameSettings gameSettings;
-        public LevelData levelData;
+        public CustomGameSettings gameSettings;
+        public CustomLevelData levelData;
         public void LoadCurrentLevelData()
         {
             if (currentLevel > gameSettings.maxLevelCount)
@@ -16,7 +16,7 @@ namespace FFStudio
                 currentLevel = Random.Range(1, gameSettings.maxLevelCount);
             }
 
-            levelData = Resources.Load<LevelData>("LevelData_" + currentLevel);
+            levelData = Resources.Load<CustomLevelData>("LevelData_" + currentLevel);
         }
     }
 }

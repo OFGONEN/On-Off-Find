@@ -8,8 +8,6 @@ public class Entity : MonoBehaviour
     public string entityName;
     [HideInInspector]
     public Vector3 startPosition;
-    public ParticleSystem entityParticleSystem;
-
     protected virtual void Awake()
     {
         startPosition = transform.position;
