@@ -3,22 +3,25 @@ using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
-public class UIEntity : MonoBehaviour
+namespace FFStudio
 {
-    public CustomGameSettings gameSettings;
-    public RectTransform uiTransform;
-    public RectTransform destinationTransform;
-    public Vector3 startPosition;
-    public virtual void Start()
+    public class UIEntity : MonoBehaviour
     {
-        startPosition = uiTransform.position;
-    }
-    public virtual void GoTargetPosition()
-    {
-        uiTransform.DOMove(destinationTransform.position, gameSettings.uiEntityTweenDuration);
-    }
-    public virtual void GoStartPosition()
-    {
-        uiTransform.DOMove(startPosition, gameSettings.uiEntityTweenDuration);
+        public CustomGameSettings gameSettings;
+        public RectTransform uiTransform;
+        public RectTransform destinationTransform;
+        public Vector3 startPosition;
+        public virtual void Start()
+        {
+            startPosition = uiTransform.position;
+        }
+        public virtual void GoTargetPosition()
+        {
+            uiTransform.DOMove(destinationTransform.position, gameSettings.uiEntityTweenDuration);
+        }
+        public virtual void GoStartPosition()
+        {
+            uiTransform.DOMove(startPosition, gameSettings.uiEntityTweenDuration);
+        }
     }
 }
