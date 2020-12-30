@@ -43,13 +43,19 @@ public class ParticleSystemManager : MonoBehaviour
         var _rayFX = GameObject.Instantiate(rayFX);
         _rayFX.SetActive(false);
 
-        return _rayFX.GetComponent<ParticleObserver>();
+        var _particleObserver = _rayFX.GetComponent<ParticleObserver>();
+        _particleObserver.returnPool = rayFXPool;
+
+        return _particleObserver;
     }
     private ParticleObserver CreateRightPlaceFX()
     {
         var _rightPlaceFX = GameObject.Instantiate(rightPlaceFX);
         _rightPlaceFX.SetActive(false);
 
-        return _rightPlaceFX.GetComponent<ParticleObserver>();
+        var _particleObserver = _rightPlaceFX.GetComponent<ParticleObserver>();
+        _particleObserver.returnPool = rightPlaceFXPool;
+
+        return _particleObserver;
     }
 }
