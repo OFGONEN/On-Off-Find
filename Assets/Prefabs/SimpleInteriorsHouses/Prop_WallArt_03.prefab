@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 400000}
   - component: {fileID: 3300000}
   - component: {fileID: 2300000}
-  - component: {fileID: 7880444455255256714}
   m_Layer: 0
   m_Name: Prop_WallArt_03
   m_TagString: Untagged
@@ -82,22 +81,3 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!114 &7880444455255256714
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 100000}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  entityMesh: {fileID: 3300000}
-  entityName: 
-  startPosition: {x: 0, y: 0, z: 0}
-  disappearingEntitySet: {fileID: 11400000, guid: 6925fe67e127ddc4294678ea993ebdb0, type: 2}
-  disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
-  rightPlaceFX: {fileID: 0}
-  rayFX: {fileID: 0}

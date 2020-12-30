@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2154592794035960702}
   - component: {fileID: 2154592794051165758}
   - component: {fileID: 2154592794051119006}
+  - component: {fileID: -6200618773991163722}
   m_Layer: 0
   m_Name: Ray-Particle-Effect
   m_TagString: Untagged
@@ -4798,3 +4799,17 @@ ParticleSystemRenderer:
   m_Mesh2: {fileID: 0}
   m_Mesh3: {fileID: 0}
   m_MaskInteraction: 0
+--- !u!114 &-6200618773991163722
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2154592794036315998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fce3a962261079347af8d06cb2680958, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  particles: {fileID: 2154592794051165758}
+  particleRenderer: {fileID: 0}

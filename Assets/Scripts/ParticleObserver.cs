@@ -12,9 +12,6 @@ public class ParticleObserver : MonoBehaviour
     private void Awake()
     {
         particleRenderer = GetComponent<ParticleSystemRenderer>();
-    }
-    private void OnEnable()
-    {
         particleStoped = EmptyMethod;
     }
     private void OnDisable()
@@ -22,6 +19,7 @@ public class ParticleObserver : MonoBehaviour
         if (particles.isPlaying)
             particles.Stop();
 
+        particleStoped = EmptyMethod;
         gameObject.SetActive(false);
         returnPool.Push(this);
     }

@@ -16,46 +16,43 @@ public class ParticleSystemManager : MonoBehaviour
         if (instance == null)
             instance = this;
 
+        rayFXPool = new Stack<ParticleObserver>(gameSettings.fxPoolCount);
+        rightPlaceFXPool = new Stack<ParticleObserver>(gameSettings.fxPoolCount);
+
         for (int i = 0; i < gameSettings.fxPoolCount; i++)
         {
-            rayFXPool.Push(CreateRayFX());
-            rightPlaceFXPool.Push(CreateRightPlaceFX());
+            CreateRayFX();
+            CreateRightPlaceFX();
         }
     }
-    private ParticleObserver GiveRayFx()
+    public ParticleObserver GiveRayFx()
     {
-        var _rayFX = rayFXPool.Peek();
+        if (rayFXPool.Count == 0)
+            CreateRayFX();
 
-        if (_rayFX != null) return rayFXPool.Pop();
-
-        return CreateRayFX();
+        return rayFXPool.Pop();
     }
-    private ParticleObserver GiveRightPlaceFX()
+    public ParticleObserver GiveRightPlaceFX()
     {
-        var _rightPlaceFX = rightPlaceFXPool.Peek();
+        if (rightPlaceFXPool.Count == 0)
+            CreateRightPlaceFX();
 
-        if (_rightPlaceFX != null) return rightPlaceFXPool.Pop();
-
-        return CreateRightPlaceFX();
+        return rightPlaceFXPool.Pop();
     }
-    private ParticleObserver CreateRayFX()
+    private void CreateRayFX()
     {
         var _rayFX = GameObject.Instantiate(rayFX);
-        _rayFX.SetActive(false);
 
         var _particleObserver = _rayFX.GetComponent<ParticleObserver>();
         _particleObserver.returnPool = rayFXPool;
-
-        return _particleObserver;
+        _rayFX.SetActive(false);
     }
-    private ParticleObserver CreateRightPlaceFX()
+    private void CreateRightPlaceFX()
     {
         var _rightPlaceFX = GameObject.Instantiate(rightPlaceFX);
-        _rightPlaceFX.SetActive(false);
 
         var _particleObserver = _rightPlaceFX.GetComponent<ParticleObserver>();
         _particleObserver.returnPool = rightPlaceFXPool;
-
-        return _particleObserver;
+        _rightPlaceFX.SetActive(false);
     }
 }

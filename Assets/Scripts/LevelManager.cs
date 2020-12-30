@@ -10,8 +10,6 @@ public class LevelManager : MonoBehaviour
     public CurrentLevelData currentLevelData;
     public DisappearingEntitySet disappearingEntitySet;
     public DisappearingEntitySet disappearedEntitySet;
-    public string reappearEntity;
-
     Camera mainCamera;
 
     private void Start()
@@ -25,7 +23,23 @@ public class LevelManager : MonoBehaviour
 
         mainCamera.transform.DOMove(_levelData.cameraEndPosition, _settings.cameraTweenDuration);
         mainCamera.transform.DORotate(_levelData.cameraEndRotation, _settings.cameraTweenDuration);
+
+        SetUpLevel();
     }
+
+    void SetUpLevel()
+    {
+        foreach (var pair in disappearingEntitySet.itemDictionary)
+        {
+            var disappearingEntity = pair.Value;
+
+            disappearingEntity.rayFX = ParticleSystemManager.instance.GiveRayFx();
+            disappearingEntity.rightPlaceFX = ParticleSystemManager.instance.GiveRightPlaceFX();
+
+            disappearingEntity.SetFX();
+        }
+    }
+
     void DisappearAllEntities()
     {
         foreach (var entityName in currentLevelData.levelData.disappearingEntityNames)
@@ -36,8 +50,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
-    [Button]
-    void ReappearEntity()
+    void ReappearEntity(string reappearEntity)
     {
         DisappearingEntity _entity;
         disappearedEntitySet.itemDictionary.TryGetValue(reappearEntity, out _entity);

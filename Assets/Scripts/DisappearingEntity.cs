@@ -7,9 +7,7 @@ public class DisappearingEntity : Entity
     public DisappearingEntitySet disappearingEntitySet;
     public DisappearingEntitySet disappearedEntitySet;
 
-    [HideInInspector]
     public ParticleObserver rightPlaceFX;
-    [HideInInspector]
     public ParticleObserver rayFX;
     private void OnEnable()
     {
@@ -22,10 +20,15 @@ public class DisappearingEntity : Entity
     public void SetFX()
     {
         rightPlaceFX.particleRenderer.mesh = entityMesh.mesh;
-        rightPlaceFX.particleStoped = () => rayFX.particles.Play();
 
-        rightPlaceFX.transform.position = startPosition;
-        rayFX.transform.position = startPosition;
+        rightPlaceFX.particleStoped = () =>
+        {
+            rayFX.gameObject.SetActive(true);
+            rayFX.particles.Play();
+        };
+
+        rightPlaceFX.transform.position = transform.position;
+        rayFX.transform.position = transform.position;
     }
     public void Disappear()
     {
@@ -37,6 +40,7 @@ public class DisappearingEntity : Entity
         gameObject.SetActive(true);
         disappearedEntitySet.RemoveDictionary(entityName);
 
+        rightPlaceFX.gameObject.SetActive(true);
         rightPlaceFX.particles.Play();
     }
 }
