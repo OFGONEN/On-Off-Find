@@ -36,6 +36,7 @@ public class LevelManager : MonoBehaviour
         }
     }
 
+    [Button]
     void ReappearEntity()
     {
         DisappearingEntity _entity;

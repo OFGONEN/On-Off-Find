@@ -23,8 +23,8 @@ public class DisappearingEntity : Entity
     {
         rightPlaceFX.particleRenderer.mesh = entityMesh.mesh;
         rightPlaceFX.particleStoped = () => rayFX.particles.Play();
-        rightPlaceFX.transform.position = startPosition;
 
+        rightPlaceFX.transform.position = startPosition;
         rayFX.transform.position = startPosition;
     }
     public void Disappear()
