@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class Entity : MonoBehaviour
 {
+    public MeshFilter entityMesh;
+
     [HideInInspector]
     public string entityName;
     [HideInInspector]
