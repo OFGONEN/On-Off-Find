@@ -212,6 +212,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 31001429}
   entityMesh: {fileID: 31001427}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -219,6 +220,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &31001429 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 134b035c0e93af843aec7a3c077450dc, type: 3}
+  m_PrefabInstance: {fileID: 31001425}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &33195194
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -298,6 +304,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 33195198}
   entityMesh: {fileID: 33195196}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -305,6 +312,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &33195198 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: c0608dab4d71e874c9197859d3a25eaa, type: 3}
+  m_PrefabInstance: {fileID: 33195194}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &43774477 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 5e07ce35bcbf3ab4d8935754c39f5715, type: 3}
@@ -451,6 +463,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 63183017}
   entityMesh: {fileID: 63183015}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -458,6 +471,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &63183017 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 5f9a66f95d8884044ba9163096adeaa1, type: 3}
+  m_PrefabInstance: {fileID: 63183013}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &68676177
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1002,6 +1020,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 206434528}
   entityMesh: {fileID: 206434526}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -1009,6 +1028,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &206434528 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 83b20edf869f6da4ebd426f093cef519, type: 3}
+  m_PrefabInstance: {fileID: 206434524}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &218307008
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4131,6 +4155,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 935303055}
   entityMesh: {fileID: 935303053}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -4138,6 +4163,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &935303055 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 3ec52e9e24d7b1f42b42ceeedec32352, type: 3}
+  m_PrefabInstance: {fileID: 935303050}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &937579891
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5201,6 +5231,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 1239087818}
   entityMesh: {fileID: 1239087816}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -5208,6 +5239,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &1239087818 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 8772bf451d39350449558b866ef0dc9c, type: 3}
+  m_PrefabInstance: {fileID: 1239087814}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1240308796
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6405,6 +6441,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 1651394958}
   entityMesh: {fileID: 1651394956}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -6412,6 +6449,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &1651394958 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 1fa3c9ee7ba6b8c47ae71b55f43080f5, type: 3}
+  m_PrefabInstance: {fileID: 1651394953}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1665085345
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -7006,6 +7048,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 1791098507}
   entityMesh: {fileID: 1791098505}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -7013,6 +7056,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &1791098507 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: c8782ba1607055049947e23f11da596b, type: 3}
+  m_PrefabInstance: {fileID: 1791098503}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1817957101 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 37d0dd690a8b46340b6dda650798a77a, type: 3}
@@ -7469,6 +7517,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94f8f5f49a26ae14da256dd597805142, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  entityRenderer: {fileID: 2023111321}
   entityMesh: {fileID: 2023111319}
   entityName: 
   startPosition: {x: 0, y: 0, z: 0}
@@ -7476,6 +7525,11 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+--- !u!23 &2023111321 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: 2300000, guid: 936823a6ab75d6e408e07665c5e57206, type: 3}
+  m_PrefabInstance: {fileID: 2023111317}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2026186715 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: e00a4d2563847644e9550edb7c97accd, type: 3}

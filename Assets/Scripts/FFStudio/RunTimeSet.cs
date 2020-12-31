@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 
@@ -34,10 +35,28 @@ namespace FFStudio
             itemDictionary.Remove(key);
         }
 
+        [Button]
         public void ClearSet()
         {
             itemList.Clear();
             itemDictionary.Clear();
+        }
+        [Button]
+        public void LogList()
+        {
+            foreach (var item in itemList)
+            {
+                Debug.Log(item.ToString());
+            }
+        }
+
+        [Button]
+        public void LogDictionary()
+        {
+            foreach (var item in itemDictionary.Values)
+            {
+                Debug.Log(item.ToString());
+            }
         }
     }
 }

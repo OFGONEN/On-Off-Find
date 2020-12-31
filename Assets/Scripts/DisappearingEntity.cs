@@ -28,7 +28,7 @@ public class DisappearingEntity : Entity
         };
 
         rightPlaceFX.transform.position = transform.position;
-        rayFX.transform.position = transform.position;
+        rayFX.transform.position = entityRenderer.bounds.center;
     }
     public void Disappear()
     {
