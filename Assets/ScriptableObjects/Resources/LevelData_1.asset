@@ -12,10 +12,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91ad857545470f247a1a13121876476e, type: 3}
   m_Name: LevelData_1
   m_EditorClassIdentifier: 
+  sceneBuildIndex: 1
   cameraStartPosition: {x: -3.400544, y: 4.300833, z: 0.7979338}
   cameraEndPosition: {x: -5, y: 3, z: 4.25}
   cameraStartRotation: {x: 28.225, y: -62.875, z: 0}
   cameraEndRotation: {x: 12.3, y: 272.7, z: 0}
+  ambientLightDefaultColor: {r: 0.21176471, g: 0.22745098, b: 0.25882354, a: 1}
   disappearingEntityNames:
   - D_Prop_Flower_Pot
   - D_Prop_WallArt
