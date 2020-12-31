@@ -13,6 +13,7 @@ public class LevelManager : MonoBehaviour
     public DisappearingEntitySet disappearedEntitySet;
 
     public EventListenerDelegateResponse startLevelListener;
+    public EventListenerDelegateResponse cleanUpLevelListener;
     public EventListenerDelegateResponse reappearEntityListener;
     Camera mainCamera;
 
@@ -20,16 +21,19 @@ public class LevelManager : MonoBehaviour
     {
         startLevelListener.OnEnable();
         reappearEntityListener.OnEnable();
+        cleanUpLevelListener.OnEnable();
     }
     private void OnDisable()
     {
         startLevelListener.OnDisable();
         reappearEntityListener.OnDisable();
+        cleanUpLevelListener.OnDisable();
     }
 
     private void Start()
     {
         startLevelListener.response = SetUpLevel;
+        cleanUpLevelListener.response = CleanUpLevel;
 
         reappearEntityListener.response = () =>
             ReappearEntity((reappearEntityListener.gameEvent as StringGameEvent).value);
@@ -44,9 +48,6 @@ public class LevelManager : MonoBehaviour
         mainCamera.transform.position = _levelData.cameraStartPosition;
         mainCamera.transform.rotation = Quaternion.Euler(_levelData.cameraStartRotation);
 
-        mainCamera.transform.DOMove(_levelData.cameraEndPosition, _settings.cameraTweenDuration);
-        mainCamera.transform.DORotate(_levelData.cameraEndRotation, _settings.cameraTweenDuration);
-
         foreach (var pair in disappearingEntitySet.itemDictionary)
         {
             var disappearingEntity = pair.Value;
@@ -57,19 +58,28 @@ public class LevelManager : MonoBehaviour
             disappearingEntity.SetFX();
         }
 
-        TurnOnLights();
+        TurnOnLights(MoveCamera);
+    }
+    void CleanUpLevel()
+    {
+        TurnOffLights();
+    }
+    void MoveCamera()
+    {
+        var _levelData = currentLevelData.levelData;
+        var _settings = currentLevelData.gameSettings;
+
+        mainCamera.transform.DOMove(_levelData.cameraEndPosition, _settings.cameraTweenDuration);
+        mainCamera.transform.DORotate(_levelData.cameraEndRotation, _settings.cameraTweenDuration);
     }
 
-    [Button]
-    void TurnOnLights()
+    void TurnOnLights(TweenCallback onCompleteDelegate)
     {
         var _duration = currentLevelData.gameSettings.lightTurnOnDuration;
 
-        DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 1, _duration);
+        DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 1, _duration).OnComplete(onCompleteDelegate);
         DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, currentLevelData.levelData.ambientLightDefaultColor, _duration);
     }
-
-    [Button]
     void TurnOffLights()
     {
         var _duration = currentLevelData.gameSettings.lightTurnOffDuration;

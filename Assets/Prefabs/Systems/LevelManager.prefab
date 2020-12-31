@@ -104,7 +104,7 @@ GameObject:
   - component: {fileID: 9029336008977268052}
   m_Layer: 0
   m_Name: LevelManager
-  m_TagString: EditorOnly
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -142,5 +142,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   startLevelListener:
     gameEvent: {fileID: 11400000, guid: 3f1153e87cef37640baf4d71df6500ca, type: 2}
+  cleanUpLevelListener:
+    gameEvent: {fileID: 11400000, guid: 4fbc548a1503c6c49b1f55c3fa8511bc, type: 2}
   reappearEntityListener:
     gameEvent: {fileID: 11400000, guid: 05e118ac272256647bc3817aab7bb64b, type: 2}

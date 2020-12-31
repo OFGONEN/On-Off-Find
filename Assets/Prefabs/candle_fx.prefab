@@ -4885,3 +4885,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   particles: {fileID: 3398254791763601028}
   particleRenderer: {fileID: 0}
+  cleanUpListener:
+    gameEvent: {fileID: 11400000, guid: 4fbc548a1503c6c49b1f55c3fa8511bc, type: 2}

@@ -8,9 +8,21 @@ public class AppManager : MonoBehaviour
 {
     public CustomCurrentLevelData currentLevelData;
     public GameEvent startLevelEvent;
+    public EventListenerDelegateResponse loadNextLevelListener;
     public WaitForSeconds startLevelWaitTime;
+
+    private void OnEnable()
+    {
+        loadNextLevelListener.OnEnable();
+    }
+    private void OnDisable()
+    {
+        loadNextLevelListener.OnDisable();
+    }
     private void Start()
     {
+        loadNextLevelListener.response = LoadNextLevel;
+
         currentLevelData.currentLevel = PlayerPrefs.GetInt("Level", 1);
 
         currentLevelData.LoadCurrentLevelData();
@@ -24,5 +36,25 @@ public class AppManager : MonoBehaviour
     {
         yield return startLevelWaitTime;
         startLevelEvent.Raise();
+    }
+
+    void LoadNextLevel()
+    {
+        currentLevelData.currentLevel++;
+        currentLevelData.LoadCurrentLevelData();
+
+        var _operation = SceneManager.UnloadSceneAsync(currentLevelData.levelData.sceneBuildIndex);
+        _operation.completed += UnloadedCurrentLevel;
+    }
+
+    void UnloadedCurrentLevel(AsyncOperation operation)
+    {
+        var _operation = SceneManager.LoadSceneAsync(currentLevelData.levelData.sceneBuildIndex, LoadSceneMode.Additive);
+        _operation.completed += LoadedNextLevel;
+    }
+
+    void LoadedNextLevel(AsyncOperation operation)
+    {
+        StartCoroutine(SetUpLevel());
     }
 }
