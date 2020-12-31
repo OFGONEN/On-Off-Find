@@ -90,10 +90,10 @@ public class LevelManager : MonoBehaviour
     [Button]
     void DisappearAllEntities()
     {
-        foreach (var entityName in currentLevelData.levelData.disappearingEntityNames)
+        foreach (var entity in currentLevelData.levelData.disappearingEntities)
         {
             DisappearingEntity _entity;
-            disappearingEntitySet.itemDictionary.TryGetValue(entityName, out _entity);
+            disappearingEntitySet.itemDictionary.TryGetValue(entity.name, out _entity);
             _entity.Disappear();
         }
     }

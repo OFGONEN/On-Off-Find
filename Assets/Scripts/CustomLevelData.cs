@@ -12,5 +12,14 @@ public class CustomLevelData : LevelData
     public Vector3 cameraStartRotation;
     public Vector3 cameraEndRotation;
     public Color ambientLightDefaultColor;
-    public string[] disappearingEntityNames;
+    public int countdownDuration;
+    public DisappearEntityData[] disappearingEntities;
+}
+
+[System.Serializable]
+public struct DisappearEntityData
+{
+    public string name;
+    public Sprite sprite;
+    public Sprite[] wrongAnswerSprites;
 }
