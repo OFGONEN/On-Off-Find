@@ -9,5 +9,8 @@ public class CustomGameSettings : GameSettings
 {
     public float cameraTweenDuration;
     public float uiEntityTweenDuration;
+
+    public float lightTurnOnDuration;
+    public float lightTurnOffDuration;
     public int fxPoolCount;
 }
