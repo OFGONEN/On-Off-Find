@@ -97,7 +97,6 @@ public class LevelManager : MonoBehaviour
             _entity.Disappear();
         }
     }
-
     void ReappearEntity(string reappearEntity)
     {
         DisappearingEntity _entity;

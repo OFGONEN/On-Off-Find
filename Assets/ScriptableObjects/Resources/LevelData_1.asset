@@ -21,8 +21,12 @@ MonoBehaviour:
   countdownDuration: 5
   disappearingEntities:
   - name: D_Prop_Flower_Pot
-    sprite: {fileID: 0}
-    wrongAnswerSprites: []
+    sprite: {fileID: -698486736626105280, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
+    wrongAnswerSprites:
+    - {fileID: 454576646986491669, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
+    - {fileID: 3497089064167241671, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
   - name: D_Prop_WallArt
-    sprite: {fileID: 0}
-    wrongAnswerSprites: []
+    sprite: {fileID: 5360720540479481435, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
+    wrongAnswerSprites:
+    - {fileID: 454576646986491669, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
+    - {fileID: 3497089064167241671, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
