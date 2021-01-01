@@ -15,3 +15,4 @@ MonoBehaviour:
   spriteList:
   - {fileID: -915513337936027669, guid: 68c927b4d456007478febd9b6400b5e0, type: 3}
   - {fileID: -7622507826894992536, guid: 68c927b4d456007478febd9b6400b5e0, type: 3}
+  index: 0

@@ -14,6 +14,7 @@ public class IntRoutineGameEvent : RoutineGameEvent
     {
         if (waitForSeconds == null) waitForSeconds = new WaitForSeconds(gameSettings.intRoutineWaitDuration);
 
+        Raise();
         routine = routineOwner.StartCoroutine(EventRoutine());
     }
     public override void EndRoutine()

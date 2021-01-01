@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5999ced7c33313b48ba69412dffdd189, type: 3}
-  m_Name: RootAlbum
+  m_Name: Default_HeaderAlbum
   m_EditorClassIdentifier: 
   spriteList:
-  - {fileID: -4944806927755115710, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
-  - {fileID: 2003139427038938185, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
+  - {fileID: -1091276668247497934, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
+  - {fileID: -2241630942308346361, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
   index: 0

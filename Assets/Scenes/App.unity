@@ -635,7 +635,12 @@ MonoBehaviour:
   countDownText: {fileID: 314997406}
   tapInputListener:
     gameEvent: {fileID: 11400000, guid: 51b85454ed5b15340a8ecd0bcd9c8a67, type: 2}
+  countDownTickListener:
+    gameEvent: {fileID: 11400000, guid: 2c1304982856b124fb1489af1834350c, type: 2}
+  countDownEndListener:
+    gameEvent: {fileID: 11400000, guid: 49425c2dc9794e2469281bed91059822, type: 2}
   startLevelEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
+  countDownEvent: {fileID: 11400000, guid: 0643bc6c9a99a43428ada2fcab83d53f, type: 2}
   headerImageAlbum: {fileID: 11400000, guid: 82cebc1b46aa7a04f8fe45cb9ee4e44e, type: 2}
   rootImageAlbum: {fileID: 11400000, guid: 413305fa1e7143e42b0a99abbb8cac0b, type: 2}
   lightImageImageAlbum: {fileID: 11400000, guid: 41bf362447573434abd7339e4856385b, type: 2}
@@ -1190,8 +1195,6 @@ MonoBehaviour:
   disappearEntityIndex: {fileID: 11400000, guid: 12f26b09d9c10ec449cc415e4bd740da, type: 2}
   levelLoadedResponse:
     gameEvent: {fileID: 11400000, guid: 3f1153e87cef37640baf4d71df6500ca, type: 2}
-  startLevelResponse:
-    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   randomOrder: 
 --- !u!1001 &635563214
 PrefabInstance:

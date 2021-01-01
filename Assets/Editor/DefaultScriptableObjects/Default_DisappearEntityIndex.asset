@@ -9,10 +9,9 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5999ced7c33313b48ba69412dffdd189, type: 3}
-  m_Name: RootAlbum
+  m_Script: {fileID: 11500000, guid: 779c432ec15f66f44bc8336842912fa8, type: 3}
+  m_Name: Default_DisappearEntityIndex
   m_EditorClassIdentifier: 
-  spriteList:
-  - {fileID: -4944806927755115710, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
-  - {fileID: 2003139427038938185, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
-  index: 0
+  value: 0
+  cleanUpListener:
+    gameEvent: {fileID: 11400000, guid: 4fbc548a1503c6c49b1f55c3fa8511bc, type: 2}

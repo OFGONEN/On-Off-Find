@@ -7,14 +7,14 @@ using UnityEngine;
 public class UISpriteAlbum : ScriptableObject
 {
     public List<Sprite> spriteList;
-    int index;
+    public int index;
 
     public Sprite GiveSprite()
     {
-        index = index % spriteList.Count;
-
         var _returnSprite = spriteList[index];
         index++;
+
+        index = index % spriteList.Count;
 
         return _returnSprite;
     }
