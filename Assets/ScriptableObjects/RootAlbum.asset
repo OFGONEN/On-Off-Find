@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: RootAlbum
   m_EditorClassIdentifier: 
   spriteList:
-  - {fileID: 2003139427038938185, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
   - {fileID: -4944806927755115710, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
+  - {fileID: 2003139427038938185, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}

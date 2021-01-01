@@ -10,8 +10,8 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5999ced7c33313b48ba69412dffdd189, type: 3}
-  m_Name: HeaderAlbum
+  m_Name: LightIconAlbum
   m_EditorClassIdentifier: 
   spriteList:
-  - {fileID: -1091276668247497934, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
-  - {fileID: -2241630942308346361, guid: 81c2c77e05028224dbc0e67fe483bf72, type: 3}
+  - {fileID: -915513337936027669, guid: 68c927b4d456007478febd9b6400b5e0, type: 3}
+  - {fileID: -7622507826894992536, guid: 68c927b4d456007478febd9b6400b5e0, type: 3}

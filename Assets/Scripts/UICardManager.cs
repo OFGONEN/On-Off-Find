@@ -9,30 +9,39 @@ public class UICardManager : MonoBehaviour
     public UICard[] cards;
     public CurrentLevelData currentLevelData;
     public SharedInt disappearEntityIndex;
-    public EventListenerDelegateResponse startLevelResponse;
+    public EventListenerDelegateResponse levelLoadedResponse;
 
     [HideInInspector]
     public List<int> randomOrder;
 
     private void OnEnable()
     {
-        startLevelResponse.OnEnable();
+        levelLoadedResponse.OnEnable();
     }
 
     private void OnDisable()
     {
-        startLevelResponse.OnDisable();
+        levelLoadedResponse.OnDisable();
     }
     private void Start()
     {
-        startLevelResponse.response = SetCardsData;
+        levelLoadedResponse.response = SetCardsData;
     }
     private void Awake()
     {
         randomOrder = new List<int>(cards.Length);
         ResetRandom();
     }
-    public void SetCardsData()
+
+    void CardsGoTarget()
+    {
+        foreach (var card in cards)
+        {
+            card.GoTargetPosition();
+        }
+    }
+
+    void SetCardsData()
     {
         var _disapperingEntityData = currentLevelData.levelData.disappearingEntities[disappearEntityIndex.value];
 
@@ -46,7 +55,7 @@ public class UICardManager : MonoBehaviour
             cards[_randomWrong].SetData(false, string.Empty, _disapperingEntityData.wrongAnswerSprites[i]);
         }
     }
-    public int GiveRandomIndex()
+    int GiveRandomIndex()
     {
         var _randomIndex = Random.Range(0, randomOrder.Count);
         var _randomValue = randomOrder[_randomIndex];
@@ -55,7 +64,7 @@ public class UICardManager : MonoBehaviour
 
         return _randomValue;
     }
-    public void ResetRandom()
+    void ResetRandom()
     {
         randomOrder.Clear();
 

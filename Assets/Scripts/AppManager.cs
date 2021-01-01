@@ -7,7 +7,7 @@ using FFStudio;
 public class AppManager : MonoBehaviour
 {
     public CustomCurrentLevelData currentLevelData;
-    public GameEvent startLevelEvent;
+    public GameEvent levelLoadedEvent;
     public EventListenerDelegateResponse loadNextLevelListener;
     public WaitForSeconds startLevelWaitTime;
 
@@ -35,7 +35,7 @@ public class AppManager : MonoBehaviour
     IEnumerator SetUpLevel()
     {
         yield return startLevelWaitTime;
-        startLevelEvent.Raise();
+        levelLoadedEvent.Raise();
     }
 
     void LoadNextLevel()
