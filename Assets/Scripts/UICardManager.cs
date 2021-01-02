@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
-using NaughtyAttributes;
+using DG.Tweening;
 
 public class UICardManager : MonoBehaviour
 {
@@ -10,22 +10,29 @@ public class UICardManager : MonoBehaviour
     public CurrentLevelData currentLevelData;
     public SharedInt disappearEntityIndex;
     public EventListenerDelegateResponse levelLoadedResponse;
-
+    public EventListenerDelegateResponse lightsTurnedOnResponse;
+    public EventListenerDelegateResponse reappearEntityResponse;
     [HideInInspector]
     public List<int> randomOrder;
 
     private void OnEnable()
     {
         levelLoadedResponse.OnEnable();
+        lightsTurnedOnResponse.OnEnable();
+        reappearEntityResponse.OnEnable();
     }
 
     private void OnDisable()
     {
         levelLoadedResponse.OnDisable();
+        lightsTurnedOnResponse.OnDisable();
+        reappearEntityResponse.OnDisable();
     }
     private void Start()
     {
         levelLoadedResponse.response = SetCardsData;
+        lightsTurnedOnResponse.response = CardsGoTarget;
+        reappearEntityResponse.response = CardsGoStart;
     }
     private void Awake()
     {
@@ -41,6 +48,32 @@ public class UICardManager : MonoBehaviour
         }
     }
 
+    void CardsGoStart()
+    {
+        Tween _cardsGoStart = null;
+
+        foreach (var card in cards)
+        {
+            _cardsGoStart = card.GoStartPosition();
+        }
+
+        _cardsGoStart.OnComplete(NextEntity);
+    }
+    void NextEntity()
+    {
+        if (disappearEntityIndex.value < currentLevelData.levelData.disappearingEntities.Length - 1)
+        {
+            disappearEntityIndex.value++;
+
+            ResetRandom();
+            SetCardsData();
+            CardsGoTarget();
+        }
+        else
+        {
+            Debug.Log("Answered");
+        }
+    }
     void SetCardsData()
     {
         var _disapperingEntityData = currentLevelData.levelData.disappearingEntities[disappearEntityIndex.value];

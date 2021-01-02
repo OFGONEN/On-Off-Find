@@ -17,15 +17,13 @@ namespace FFStudio
         {
             startPosition = uiTransform.position;
         }
-        [Button]
-        public virtual void GoTargetPosition()
+        public virtual Tween GoTargetPosition()
         {
-            uiTransform.DOMove(destinationTransform.position, gameSettings.uiEntityTweenDuration);
+            return uiTransform.DOMove(destinationTransform.position, gameSettings.uiEntityTweenDuration);
         }
-        [Button]
-        public virtual void GoStartPosition()
+        public virtual Tween GoStartPosition()
         {
-            uiTransform.DOMove(startPosition, gameSettings.uiEntityTweenDuration);
+            return uiTransform.DOMove(startPosition, gameSettings.uiEntityTweenDuration);
         }
     }
 }

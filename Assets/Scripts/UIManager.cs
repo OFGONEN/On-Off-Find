@@ -22,6 +22,7 @@ public class UIManager : MonoBehaviour
     public EventListenerDelegateResponse tapInputListener;
     public EventListenerDelegateResponse countDownTickListener;
     public EventListenerDelegateResponse countDownEndListener;
+    public EventListenerDelegateResponse lightsTurnedOnListener;
     #endregion
 
     #region Events
@@ -39,6 +40,7 @@ public class UIManager : MonoBehaviour
         tapInputListener.OnEnable();
         countDownTickListener.OnEnable();
         countDownEndListener.OnEnable();
+        lightsTurnedOnListener.OnEnable();
     }
 
     private void OnDisable()
@@ -46,6 +48,7 @@ public class UIManager : MonoBehaviour
         tapInputListener.OnDisable();
         countDownTickListener.OnDisable();
         countDownEndListener.OnDisable();
+        lightsTurnedOnListener.OnDisable();
     }
 
     private void Start()
@@ -55,6 +58,7 @@ public class UIManager : MonoBehaviour
         tapInputListener.response = StartLevel;
         countDownTickListener.response = CountDownTickResponse;
         countDownEndListener.response = CountDownEndResponse;
+        lightsTurnedOnListener.response = () => lightImage.sprite = lightImageImageAlbum.GiveSprite();
     }
 
     void StartLevel()

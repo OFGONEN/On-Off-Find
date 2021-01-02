@@ -18,5 +18,5 @@ MonoBehaviour:
   intRoutineWaitDuration: 1
   lightTurnOnDuration: 0.5
   lightTurnOffDuration: 0.2
-  countDownDuration: 5
+  lightTurnOffWaitDuration: 2
   fxPoolCount: 5

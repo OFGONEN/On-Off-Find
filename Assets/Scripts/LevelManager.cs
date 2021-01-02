@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using NaughtyAttributes;
 using UnityEngine;
@@ -12,11 +12,18 @@ public class LevelManager : MonoBehaviour
     public DisappearingEntitySet disappearingEntitySet;
     public DisappearingEntitySet disappearedEntitySet;
 
+    #region Events
+    public GameEvent lightsTurnedOn;
+    #endregion
+    #region EventListeners
     public EventListenerDelegateResponse levelLoadedListener;
     public EventListenerDelegateResponse startLevelListener;
     public EventListenerDelegateResponse cleanUpLevelListener;
     public EventListenerDelegateResponse reappearEntityListener;
+    public EventListenerDelegateResponse countDownEndListener;
+    #endregion
     Camera mainCamera;
+    WaitForSeconds waitForLightTurnOff;
 
     private void OnEnable()
     {
@@ -24,6 +31,7 @@ public class LevelManager : MonoBehaviour
         startLevelListener.OnEnable();
         reappearEntityListener.OnEnable();
         cleanUpLevelListener.OnEnable();
+        countDownEndListener.OnEnable();
     }
     private void OnDisable()
     {
@@ -31,6 +39,7 @@ public class LevelManager : MonoBehaviour
         startLevelListener.OnDisable();
         reappearEntityListener.OnDisable();
         cleanUpLevelListener.OnDisable();
+        countDownEndListener.OnDisable();
     }
 
     private void Start()
@@ -38,11 +47,13 @@ public class LevelManager : MonoBehaviour
         levelLoadedListener.response = SetUpLevel;
         cleanUpLevelListener.response = CleanUpLevel;
         startLevelListener.response = MoveCamera;
+        countDownEndListener.response = CountDownEndResponse;
+
+        waitForLightTurnOff = new WaitForSeconds(currentLevelData.gameSettings.lightTurnOffWaitDuration);
 
         reappearEntityListener.response = () =>
             ReappearEntity((reappearEntityListener.gameEvent as StringGameEvent).value);
     }
-
     void SetUpLevel()
     {
         var _levelData = currentLevelData.levelData;
@@ -66,7 +77,7 @@ public class LevelManager : MonoBehaviour
     }
     void CleanUpLevel()
     {
-        TurnOffLights();
+        TurnOffLights(EmptyMethod);
     }
     void MoveCamera()
     {
@@ -76,23 +87,29 @@ public class LevelManager : MonoBehaviour
         mainCamera.transform.DOMove(_levelData.cameraEndPosition, _settings.cameraTweenDuration);
         mainCamera.transform.DORotate(_levelData.cameraEndRotation, _settings.cameraTweenDuration);
     }
+    void CountDownEndResponse()
+    {
+        TurnOffLights(() =>
+        DisappearAllEntities(() =>
+        StartCoroutine(WaitForSecond(() =>
+        TurnOnLights(() => lightsTurnedOn.Raise()), waitForLightTurnOff))));
 
-    void TurnOnLights(TweenCallback onCompleteDelegate)
+    }
+    void TurnOnLights(TweenCallback onComplete)
     {
         var _duration = currentLevelData.gameSettings.lightTurnOnDuration;
 
-        DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 1, _duration).OnComplete(onCompleteDelegate);
+        DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 1, _duration).OnComplete(onComplete);
         DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, currentLevelData.levelData.ambientLightDefaultColor, _duration);
     }
-    void TurnOffLights()
+    void TurnOffLights(TweenCallback onComplete)
     {
         var _duration = currentLevelData.gameSettings.lightTurnOffDuration;
 
-        DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 0, _duration);
+        DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 0, _duration).OnComplete(onComplete);
         DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, Color.black, _duration);
     }
-    [Button]
-    void DisappearAllEntities()
+    void DisappearAllEntities(TweenCallback onComplete)
     {
         foreach (var entity in currentLevelData.levelData.disappearingEntities)
         {
@@ -100,12 +117,20 @@ public class LevelManager : MonoBehaviour
             disappearingEntitySet.itemDictionary.TryGetValue(entity.name, out _entity);
             _entity.Disappear();
         }
+
+        onComplete();
     }
     void ReappearEntity(string reappearEntity)
     {
         DisappearingEntity _entity;
         disappearedEntitySet.itemDictionary.TryGetValue(reappearEntity, out _entity);
         _entity.Reappear();
+    }
+
+    IEnumerator WaitForSecond(TweenCallback onComplete, WaitForSeconds wait)
+    {
+        yield return wait;
+        onComplete();
     }
 
     void EmptyMethod()

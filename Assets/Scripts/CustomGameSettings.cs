@@ -12,5 +12,6 @@ public class CustomGameSettings : GameSettings
     public int intRoutineWaitDuration;
     public float lightTurnOnDuration;
     public float lightTurnOffDuration;
+    public float lightTurnOffWaitDuration;
     public int fxPoolCount;
 }
