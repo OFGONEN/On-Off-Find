@@ -647,6 +647,7 @@ MonoBehaviour:
     gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
   startLevelEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   confettiStart: {fileID: 11400000, guid: 5618cddc3aa3cd040a056161e0e57808, type: 2}
+  confettiEnd: {fileID: 11400000, guid: b38c898c13fcd76429fef8659e02f375, type: 2}
   nextLevelEvent: {fileID: 11400000, guid: 3f87b8a106e66374cb3604bd485b6585, type: 2}
   countDownEvent: {fileID: 11400000, guid: 0643bc6c9a99a43428ada2fcab83d53f, type: 2}
   headerImageAlbum: {fileID: 11400000, guid: 82cebc1b46aa7a04f8fe45cb9ee4e44e, type: 2}
@@ -910,6 +911,9 @@ GameObject:
   - component: {fileID: 519420031}
   - component: {fileID: 519420029}
   - component: {fileID: 519420030}
+  - component: {fileID: 519420033}
+  - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1122,7 +1126,28 @@ MonoBehaviour:
   cameraMovedEndResponse:
     gameEvent: {fileID: 11400000, guid: 7cdc814074b1f2546bfaa74b096fcceb, type: 2}
   currentLevel: {fileID: 11400000, guid: 9f08cd836ce2a814798ec4563c585c29, type: 2}
-  cameraRotator: {fileID: 519420030}
+  cameraRotator: {fileID: 519420035}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4a02d09de4d378848a95de7a1d385234, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Target: {fileID: 0}
+  Space: 0
+  AxisA: {x: 0, y: -1, z: 0}
+  AxisB: {x: 1, y: 0, z: 0}
+  Multiplier: 1
+  Dampening: 10
+  ScaleByTime: 0
+  DefaultRotation: {x: 0, y: 0, z: 0}
+  remainingDelta: {x: 0, y: 0, z: 0, w: 1}
 --- !u!1 &520181050
 GameObject:
   m_ObjectHideFlags: 0

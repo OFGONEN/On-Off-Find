@@ -30,6 +30,7 @@ public class UIManager : MonoBehaviour
     #region Events
     public GameEvent startLevelEvent;
     public GameEvent confettiStart;
+    public GameEvent confettiEnd;
     public GameEvent nextLevelEvent;
     public IntRoutineGameEvent countDownEvent;
     #endregion
@@ -123,6 +124,7 @@ public class UIManager : MonoBehaviour
     }
     void NextLevel()
     {
+        confettiEnd.Raise();
         nextLevelEvent.Raise();
 
         headerImage.GoTargetPosition();

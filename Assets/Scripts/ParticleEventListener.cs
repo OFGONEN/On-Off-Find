@@ -37,6 +37,7 @@ public class ParticleEventListener : MonoBehaviour
     {
         for (int i = 0; i < particleSystems.Length; i++)
         {
+            particleSystems[i].Clear();
             particleSystems[i].Stop();
         }
     }
