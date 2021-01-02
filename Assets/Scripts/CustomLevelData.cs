@@ -21,5 +21,6 @@ public struct DisappearEntityData
 {
     public string name;
     public Sprite sprite;
-    public Sprite[] wrongAnswerSprites;
+    public UISpriteAlbum wrongSpriteAlbum;
+
 }

@@ -82,11 +82,25 @@ public class UICardManager : MonoBehaviour
 
         cards[_randomTrue].SetData(true, _disapperingEntityData.name, _disapperingEntityData.sprite);
 
+        int _random = -1;
+        int _max = _disapperingEntityData.wrongSpriteAlbum.spriteList.Count;
+
         for (int i = 0; i < cards.Length - 1; i++)
         {
             var _randomWrong = GiveRandomIndex();
-            cards[_randomWrong].SetData(false, string.Empty, _disapperingEntityData.wrongAnswerSprites[i]);
+
+            _random = GiveUniqueRandom(_random, _max);
+            cards[_randomWrong].SetData(false, string.Empty, _disapperingEntityData.wrongSpriteAlbum.spriteList[_random]);
         }
+    }
+    int GiveUniqueRandom(int random, int max)
+    {
+        var _random = Random.Range(0, max);
+
+        if (random == _random)
+            return GiveUniqueRandom(random, max);
+
+        return _random;
     }
     int GiveRandomIndex()
     {
