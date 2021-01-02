@@ -12,6 +12,7 @@ public class LevelManager : MonoBehaviour
     public DisappearingEntitySet disappearingEntitySet;
     public DisappearingEntitySet disappearedEntitySet;
 
+    public EventListenerDelegateResponse levelLoadedListener;
     public EventListenerDelegateResponse startLevelListener;
     public EventListenerDelegateResponse cleanUpLevelListener;
     public EventListenerDelegateResponse reappearEntityListener;
@@ -19,12 +20,14 @@ public class LevelManager : MonoBehaviour
 
     private void OnEnable()
     {
+        levelLoadedListener.OnEnable();
         startLevelListener.OnEnable();
         reappearEntityListener.OnEnable();
         cleanUpLevelListener.OnEnable();
     }
     private void OnDisable()
     {
+        levelLoadedListener.OnDisable();
         startLevelListener.OnDisable();
         reappearEntityListener.OnDisable();
         cleanUpLevelListener.OnDisable();
@@ -32,8 +35,9 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
-        startLevelListener.response = SetUpLevel;
+        levelLoadedListener.response = SetUpLevel;
         cleanUpLevelListener.response = CleanUpLevel;
+        startLevelListener.response = MoveCamera;
 
         reappearEntityListener.response = () =>
             ReappearEntity((reappearEntityListener.gameEvent as StringGameEvent).value);
@@ -58,7 +62,7 @@ public class LevelManager : MonoBehaviour
             disappearingEntity.SetFX();
         }
 
-        TurnOnLights(MoveCamera);
+        TurnOnLights(EmptyMethod);
     }
     void CleanUpLevel()
     {
@@ -97,11 +101,15 @@ public class LevelManager : MonoBehaviour
             _entity.Disappear();
         }
     }
-
     void ReappearEntity(string reappearEntity)
     {
         DisappearingEntity _entity;
         disappearedEntitySet.itemDictionary.TryGetValue(reappearEntity, out _entity);
         _entity.Reappear();
+    }
+
+    void EmptyMethod()
+    {
+
     }
 }

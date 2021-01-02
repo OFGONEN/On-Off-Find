@@ -15,6 +15,8 @@ MonoBehaviour:
   maxLevelCount: 1
   cameraTweenDuration: 1
   uiEntityTweenDuration: 0.5
+  intRoutineWaitDuration: 1
   lightTurnOnDuration: 0.5
   lightTurnOffDuration: 0.2
+  countDownDuration: 5
   fxPoolCount: 5

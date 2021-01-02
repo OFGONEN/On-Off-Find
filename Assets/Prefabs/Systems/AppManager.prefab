@@ -44,6 +44,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentLevelData: {fileID: 11400000, guid: 9f08cd836ce2a814798ec4563c585c29, type: 2}
-  startLevelEvent: {fileID: 11400000, guid: 3f1153e87cef37640baf4d71df6500ca, type: 2}
+  levelLoadedEvent: {fileID: 11400000, guid: 3f1153e87cef37640baf4d71df6500ca, type: 2}
   loadNextLevelListener:
     gameEvent: {fileID: 11400000, guid: 8293e4991a28b0d448ddc1af08244346, type: 2}
