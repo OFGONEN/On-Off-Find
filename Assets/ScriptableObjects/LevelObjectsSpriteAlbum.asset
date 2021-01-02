@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5999ced7c33313b48ba69412dffdd189, type: 3}
-  m_Name: WrongSpriteAlbum
+  m_Name: LevelObjectsSpriteAlbum
   m_EditorClassIdentifier: 
   spriteList:
   - {fileID: 7680563099935256686, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
@@ -31,4 +31,17 @@ MonoBehaviour:
   - {fileID: 1832188054109831910, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
   - {fileID: -698486736626105280, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
   - {fileID: 6236802726545307482, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
+  - {fileID: 7415305315740017117, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
+  - {fileID: 3587079203712656673, guid: 8efcaea39f18ff64292c5048d2f93a4c, type: 3}
+  - {fileID: -2836066595333040414, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: 6687835570296679299, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: 1241930034055620387, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: -6774097824126407684, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: 2560268332025493650, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: 7478492220856333579, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: -3299719810123919041, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: 2588305458183771998, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: 6932791047726008291, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: -651760298697156702, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
+  - {fileID: -3762665870535963639, guid: 4f4f77443ddca72459ba579edfeb7856, type: 3}
   index: 0

@@ -13,6 +13,7 @@ public class CustomLevelData : LevelData
     public Vector3 cameraEndRotation;
     public Color ambientLightDefaultColor;
     public int countdownDuration;
+    public UISpriteAlbum spriteAlbum;
     public DisappearEntityData[] disappearingEntities;
 }
 
@@ -20,7 +21,5 @@ public class CustomLevelData : LevelData
 public struct DisappearEntityData
 {
     public string name;
-    public Sprite sprite;
-    public UISpriteAlbum wrongSpriteAlbum;
-
+    public int spriteIndex;
 }

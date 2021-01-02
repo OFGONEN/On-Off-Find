@@ -77,28 +77,29 @@ public class UICardManager : MonoBehaviour
     {
         ResetRandom();
         var _disapperingEntityData = currentLevelData.levelData.disappearingEntities[disappearEntityIndex.value];
+        var _spriteAlbum = currentLevelData.levelData.spriteAlbum;
 
         var _randomTrue = GiveRandomIndex();
-
-        cards[_randomTrue].SetData(true, _disapperingEntityData.name, _disapperingEntityData.sprite);
+        var _correctIndex = _disapperingEntityData.spriteIndex;
+        cards[_randomTrue].SetData(true, _disapperingEntityData.name, _spriteAlbum.spriteList[_correctIndex]);
 
         int _random = -1;
-        int _max = _disapperingEntityData.wrongSpriteAlbum.spriteList.Count;
+        int _max = _spriteAlbum.spriteList.Count;
 
         for (int i = 0; i < cards.Length - 1; i++)
         {
             var _randomWrong = GiveRandomIndex();
 
-            _random = GiveUniqueRandom(_random, _max);
-            cards[_randomWrong].SetData(false, string.Empty, _disapperingEntityData.wrongSpriteAlbum.spriteList[_random]);
+            _random = GiveUniqueRandom(_random, _correctIndex, _max);
+            cards[_randomWrong].SetData(false, string.Empty, _spriteAlbum.spriteList[_random]);
         }
     }
-    int GiveUniqueRandom(int random, int max)
+    int GiveUniqueRandom(int random, int forbidden, int max)
     {
         var _random = Random.Range(0, max);
 
-        if (random == _random)
-            return GiveUniqueRandom(random, max);
+        if (random == _random || random == forbidden)
+            return GiveUniqueRandom(random, forbidden, max);
 
         return _random;
     }
