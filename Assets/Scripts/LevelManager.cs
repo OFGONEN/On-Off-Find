@@ -14,6 +14,7 @@ public class LevelManager : MonoBehaviour
 
     #region Events
     public GameEvent lightsTurnedOn;
+    public GameEvent cameraMovedEnd;
     #endregion
     #region EventListeners
     public EventListenerDelegateResponse newLevelLoadingListener;
@@ -105,7 +106,7 @@ public class LevelManager : MonoBehaviour
         var _settings = currentLevelData.gameSettings;
 
         mainCamera.transform.DOMove(_levelData.cameraEndPosition, _settings.cameraTweenDuration).OnComplete(onComplete);
-        mainCamera.transform.DORotate(_levelData.cameraEndRotation, _settings.cameraTweenDuration);
+        mainCamera.transform.DORotate(_levelData.cameraEndRotation, _settings.cameraTweenDuration).OnComplete(cameraMovedEnd.Raise);
     }
     void CountDownEndResponse()
     {
