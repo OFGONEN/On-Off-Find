@@ -8,20 +8,22 @@ public class AppManager : MonoBehaviour
 {
     public CustomCurrentLevelData currentLevelData;
     public GameEvent levelLoadedEvent;
-    public EventListenerDelegateResponse loadNextLevelListener;
+    public GameEvent cleanUpEvent;
+    public GameEvent startLevelInSameRoomEvent;
+    public EventListenerDelegateResponse nextLevelListener;
     public WaitForSeconds startLevelWaitTime;
 
     private void OnEnable()
     {
-        loadNextLevelListener.OnEnable();
+        nextLevelListener.OnEnable();
     }
     private void OnDisable()
     {
-        loadNextLevelListener.OnDisable();
+        nextLevelListener.OnDisable();
     }
     private void Start()
     {
-        loadNextLevelListener.response = LoadNextLevel;
+        nextLevelListener.response = NextLevel;
 
         currentLevelData.currentLevel = PlayerPrefs.GetInt("Level", 1);
 
@@ -31,18 +33,33 @@ public class AppManager : MonoBehaviour
         startLevelWaitTime = new WaitForSeconds(0.1f);
         StartCoroutine(SetUpLevel());
     }
-
     IEnumerator SetUpLevel()
     {
         yield return startLevelWaitTime;
         levelLoadedEvent.Raise();
     }
-
-    void LoadNextLevel()
+    void NextLevel()
     {
+        cleanUpEvent.Raise();
+
+        int _currentBuildIndex = currentLevelData.currentLevel;
+
         currentLevelData.currentLevel++;
         currentLevelData.LoadCurrentLevelData();
 
+        if (_currentBuildIndex == currentLevelData.levelData.sceneBuildIndex)
+        {
+            startLevelInSameRoomEvent.Raise();
+            levelLoadedEvent.Raise();
+        }
+        else
+        {
+            //Isiklari kapamak lazim
+            LoadNextLevel();
+        }
+    }
+    void LoadNextLevel()
+    {
         var _operation = SceneManager.UnloadSceneAsync(currentLevelData.levelData.sceneBuildIndex);
         _operation.completed += UnloadedCurrentLevel;
     }

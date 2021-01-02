@@ -21,6 +21,7 @@ public class UIManager : MonoBehaviour
     #region EventListeners
     public EventListenerDelegateResponse tapInputListener;
     public EventListenerDelegateResponse levelCompleted;
+    public EventListenerDelegateResponse startLevelListener;
     public EventListenerDelegateResponse countDownTickListener;
     public EventListenerDelegateResponse countDownEndListener;
     public EventListenerDelegateResponse lightsTurnedOnListener;
@@ -29,6 +30,7 @@ public class UIManager : MonoBehaviour
     #region Events
     public GameEvent startLevelEvent;
     public GameEvent confettiStart;
+    public GameEvent nextLevelEvent;
     public IntRoutineGameEvent countDownEvent;
     #endregion
 
@@ -44,6 +46,7 @@ public class UIManager : MonoBehaviour
         countDownEndListener.OnEnable();
         lightsTurnedOnListener.OnEnable();
         levelCompleted.OnEnable();
+        startLevelListener.OnEnable();
     }
 
     private void OnDisable()
@@ -53,6 +56,7 @@ public class UIManager : MonoBehaviour
         countDownEndListener.OnDisable();
         lightsTurnedOnListener.OnDisable();
         levelCompleted.OnDisable();
+        startLevelListener.OnDisable();
     }
 
     private void Start()
@@ -64,9 +68,11 @@ public class UIManager : MonoBehaviour
         countDownEndListener.response = CountDownEndResponse;
         lightsTurnedOnListener.response = () => lightImage.sprite = lightImageImageAlbum.GiveSprite();
         levelCompleted.response = LevelCompleted;
+        startLevelListener.response = EmptyMethod;
     }
     void StartLevel()
     {
+        startLevelListener.response = EmptyMethod;
         tapInputListener.response = EmptyMethod;
 
         levelInfoUI.GoTargetPosition();
@@ -112,8 +118,23 @@ public class UIManager : MonoBehaviour
         footImage.GoStartPosition().onComplete = () =>
         {
             confettiStart.Raise();
-            tapInputListener.response = EmptyMethod;
+            tapInputListener.response = NextLevel;
         };
+    }
+    void NextLevel()
+    {
+        nextLevelEvent.Raise();
+
+        headerImage.GoTargetPosition();
+        footImage.GoTargetPosition().onComplete = () =>
+        {
+            headerImage.SetSprite(headerImageAlbum.GiveSprite());
+            footImage.SetSprite(footImageAlbum.GiveSprite());
+
+        };
+
+        tapInputListener.response = EmptyMethod;
+        startLevelListener.response = StartLevel;
     }
     void EmptyMethod()
     {

@@ -637,6 +637,8 @@ MonoBehaviour:
     gameEvent: {fileID: 11400000, guid: 51b85454ed5b15340a8ecd0bcd9c8a67, type: 2}
   levelCompleted:
     gameEvent: {fileID: 11400000, guid: 51f1dc7154140bb48a8a80e2a728b9e6, type: 2}
+  startLevelListener:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   countDownTickListener:
     gameEvent: {fileID: 11400000, guid: 2c1304982856b124fb1489af1834350c, type: 2}
   countDownEndListener:
@@ -645,6 +647,8 @@ MonoBehaviour:
     gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
   startLevelEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   confettiStart: {fileID: 11400000, guid: 5618cddc3aa3cd040a056161e0e57808, type: 2}
+  confettiEnd: {fileID: 11400000, guid: b38c898c13fcd76429fef8659e02f375, type: 2}
+  nextLevelEvent: {fileID: 11400000, guid: 3f87b8a106e66374cb3604bd485b6585, type: 2}
   countDownEvent: {fileID: 11400000, guid: 0643bc6c9a99a43428ada2fcab83d53f, type: 2}
   headerImageAlbum: {fileID: 11400000, guid: 82cebc1b46aa7a04f8fe45cb9ee4e44e, type: 2}
   footImageAlbum: {fileID: 11400000, guid: 413305fa1e7143e42b0a99abbb8cac0b, type: 2}

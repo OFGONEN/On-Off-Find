@@ -38,7 +38,6 @@ public class UICardManager : MonoBehaviour
     private void Awake()
     {
         randomOrder = new List<int>(cards.Length);
-        ResetRandom();
     }
 
     void CardsGoTarget()
@@ -66,7 +65,6 @@ public class UICardManager : MonoBehaviour
         {
             disappearEntityIndex.value++;
 
-            ResetRandom();
             SetCardsData();
             CardsGoTarget();
         }
@@ -77,6 +75,7 @@ public class UICardManager : MonoBehaviour
     }
     void SetCardsData()
     {
+        ResetRandom();
         var _disapperingEntityData = currentLevelData.levelData.disappearingEntities[disappearEntityIndex.value];
 
         var _randomTrue = GiveRandomIndex();

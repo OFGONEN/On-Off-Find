@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour
     #region EventListeners
     public EventListenerDelegateResponse levelLoadedListener;
     public EventListenerDelegateResponse startLevelListener;
-    public EventListenerDelegateResponse cleanUpLevelListener;
+    public EventListenerDelegateResponse startLevelInSameRoomListener;
     public EventListenerDelegateResponse reappearEntityListener;
     public EventListenerDelegateResponse countDownEndListener;
     #endregion
@@ -29,24 +29,35 @@ public class LevelManager : MonoBehaviour
     {
         levelLoadedListener.OnEnable();
         startLevelListener.OnEnable();
+        startLevelInSameRoomListener.OnEnable();
         reappearEntityListener.OnEnable();
-        cleanUpLevelListener.OnEnable();
         countDownEndListener.OnEnable();
     }
     private void OnDisable()
     {
         levelLoadedListener.OnDisable();
         startLevelListener.OnDisable();
+        startLevelInSameRoomListener.OnDisable();
         reappearEntityListener.OnDisable();
-        cleanUpLevelListener.OnDisable();
         countDownEndListener.OnDisable();
     }
 
     private void Start()
     {
         levelLoadedListener.response = SetUpLevel;
-        cleanUpLevelListener.response = CleanUpLevel;
-        startLevelListener.response = MoveCamera;
+        startLevelListener.response = () => MoveCameraEndPosition(EmptyMethod);
+
+        startLevelInSameRoomListener.response = () =>
+        {
+            levelLoadedListener.response = EmptyMethod;
+            MoveCameraStartPosition(() =>
+            {
+                SetUpLevel();
+                startLevelListener.gameEvent.Raise();
+                levelLoadedListener.response = SetUpLevel;
+            });
+        };
+
         countDownEndListener.response = CountDownEndResponse;
 
         waitForLightTurnOff = new WaitForSeconds(currentLevelData.gameSettings.lightTurnOffWaitDuration);
@@ -75,16 +86,21 @@ public class LevelManager : MonoBehaviour
 
         TurnOnLights(EmptyMethod);
     }
-    void CleanUpLevel()
-    {
-        TurnOffLights(EmptyMethod);
-    }
-    void MoveCamera()
+
+    void MoveCameraStartPosition(TweenCallback onComplete)
     {
         var _levelData = currentLevelData.levelData;
         var _settings = currentLevelData.gameSettings;
 
-        mainCamera.transform.DOMove(_levelData.cameraEndPosition, _settings.cameraTweenDuration);
+        mainCamera.transform.DOMove(_levelData.cameraStartPosition, _settings.cameraTweenDuration).OnComplete(onComplete);
+        mainCamera.transform.DORotate(_levelData.cameraStartRotation, _settings.cameraTweenDuration);
+    }
+    void MoveCameraEndPosition(TweenCallback onComplete)
+    {
+        var _levelData = currentLevelData.levelData;
+        var _settings = currentLevelData.gameSettings;
+
+        mainCamera.transform.DOMove(_levelData.cameraEndPosition, _settings.cameraTweenDuration).OnComplete(onComplete);
         mainCamera.transform.DORotate(_levelData.cameraEndRotation, _settings.cameraTweenDuration);
     }
     void CountDownEndResponse()
