@@ -46,7 +46,6 @@ public class AppManager : MonoBehaviour
         var _operation = SceneManager.UnloadSceneAsync(currentLevelData.levelData.sceneBuildIndex);
         _operation.completed += UnloadedCurrentLevel;
     }
-
     void UnloadedCurrentLevel(AsyncOperation operation)
     {
         var _operation = SceneManager.LoadSceneAsync(currentLevelData.levelData.sceneBuildIndex, LoadSceneMode.Additive);

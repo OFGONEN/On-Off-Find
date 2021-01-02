@@ -20,6 +20,7 @@ public class UIManager : MonoBehaviour
 
     #region EventListeners
     public EventListenerDelegateResponse tapInputListener;
+    public EventListenerDelegateResponse levelCompleted;
     public EventListenerDelegateResponse countDownTickListener;
     public EventListenerDelegateResponse countDownEndListener;
     public EventListenerDelegateResponse lightsTurnedOnListener;
@@ -27,11 +28,12 @@ public class UIManager : MonoBehaviour
 
     #region Events
     public GameEvent startLevelEvent;
+    public GameEvent confettiStart;
     public IntRoutineGameEvent countDownEvent;
     #endregion
 
     public UISpriteAlbum headerImageAlbum;
-    public UISpriteAlbum rootImageAlbum;
+    public UISpriteAlbum footImageAlbum;
     public UISpriteAlbum lightImageImageAlbum;
     public CurrentLevelData currentLevel;
 
@@ -41,6 +43,7 @@ public class UIManager : MonoBehaviour
         countDownTickListener.OnEnable();
         countDownEndListener.OnEnable();
         lightsTurnedOnListener.OnEnable();
+        levelCompleted.OnEnable();
     }
 
     private void OnDisable()
@@ -49,6 +52,7 @@ public class UIManager : MonoBehaviour
         countDownTickListener.OnDisable();
         countDownEndListener.OnDisable();
         lightsTurnedOnListener.OnDisable();
+        levelCompleted.OnDisable();
     }
 
     private void Start()
@@ -59,8 +63,8 @@ public class UIManager : MonoBehaviour
         countDownTickListener.response = CountDownTickResponse;
         countDownEndListener.response = CountDownEndResponse;
         lightsTurnedOnListener.response = () => lightImage.sprite = lightImageImageAlbum.GiveSprite();
+        levelCompleted.response = LevelCompleted;
     }
-
     void StartLevel()
     {
         tapInputListener.response = EmptyMethod;
@@ -94,6 +98,22 @@ public class UIManager : MonoBehaviour
 
         countDownText.text = (currentLevel.levelData.countdownDuration / 10).ToString()
             + (currentLevel.levelData.countdownDuration % 10).ToString();
+    }
+    void LevelCompleted()
+    {
+        levelInfoUI.GoStartPosition();
+        countDownUI.GoStartPosition();
+        backgroundUI.GoStartPosition();
+
+        headerImage.SetSprite(headerImageAlbum.GiveSprite());
+        footImage.SetSprite(footImageAlbum.GiveSprite());
+
+        headerImage.GoStartPosition();
+        footImage.GoStartPosition().onComplete = () =>
+        {
+            confettiStart.Raise();
+            tapInputListener.response = EmptyMethod;
+        };
     }
     void EmptyMethod()
     {

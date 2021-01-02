@@ -9,11 +9,12 @@ public class UICardManager : MonoBehaviour
     public UICard[] cards;
     public CurrentLevelData currentLevelData;
     public SharedInt disappearEntityIndex;
+    public GameEvent levelCompletedEvent;
     public EventListenerDelegateResponse levelLoadedResponse;
     public EventListenerDelegateResponse lightsTurnedOnResponse;
     public EventListenerDelegateResponse reappearEntityResponse;
-    [HideInInspector]
-    public List<int> randomOrder;
+
+    List<int> randomOrder;
 
     private void OnEnable()
     {
@@ -71,7 +72,7 @@ public class UICardManager : MonoBehaviour
         }
         else
         {
-            Debug.Log("Answered");
+            levelCompletedEvent.Raise();
         }
     }
     void SetCardsData()
