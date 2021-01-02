@@ -13,5 +13,8 @@ EditorBuildSettings:
     guid: 1214c233c98fd474d8303485f23899f3
   - enabled: 1
     path: Assets/Scenes/SimpleInteriorsHouses/Room_2.unity
-    guid: 39540afbd314ec547ada970b746380b5
+    guid: 11fab3d0f625e5a448b7fc41e4bc146b
+  - enabled: 1
+    path: Assets/Scenes/SimpleInteriorsHouses/Room_3.unity
+    guid: ad0446ddffeaf2942b54ee2b58802182
   m_configObjects: {}
