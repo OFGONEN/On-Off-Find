@@ -61,8 +61,6 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        SetLevelData();
-
         tapInputListener.response = StartLevel;
         countDownTickListener.response = CountDownTickResponse;
         countDownEndListener.response = CountDownEndResponse;
@@ -72,6 +70,8 @@ public class UIManager : MonoBehaviour
     }
     void StartLevel()
     {
+        SetLevelData();
+
         startLevelListener.response = EmptyMethod;
         tapInputListener.response = EmptyMethod;
 
