@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxLevelCount: 3
   cameraTweenDuration: 1
+  cameraTurnDegree: 10
+  cameraTurnMultiplier: 0.1
   uiEntityTweenDuration: 0.5
   intRoutineWaitDuration: 1
   lightTurnOnDuration: 0.5

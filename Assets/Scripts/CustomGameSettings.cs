@@ -8,6 +8,8 @@ using FFStudio;
 public class CustomGameSettings : GameSettings
 {
     public float cameraTweenDuration;
+    public float cameraTurnDegree;
+    public float cameraTurnMultiplier;
     public float uiEntityTweenDuration;
     public int intRoutineWaitDuration;
     public float lightTurnOnDuration;
