@@ -2,28 +2,37 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using DG;
 using FFStudio;
+using DG.Tweening;
 
 public class AppManager : MonoBehaviour
 {
     public CustomCurrentLevelData currentLevelData;
+    public GameEvent newLevelLoadingEvent;
     public GameEvent levelLoadedEvent;
     public GameEvent cleanUpEvent;
+    public GameEvent startLevelEvent;
     public GameEvent startLevelInSameRoomEvent;
     public EventListenerDelegateResponse nextLevelListener;
+    public EventListenerDelegateResponse levelLoadedListener;
     public WaitForSeconds startLevelWaitTime;
+    public WaitForSeconds lightOffWaitTime;
 
     private void OnEnable()
     {
         nextLevelListener.OnEnable();
+        levelLoadedListener.OnEnable();
     }
     private void OnDisable()
     {
         nextLevelListener.OnDisable();
+        levelLoadedListener.OnDisable();
     }
     private void Start()
     {
         nextLevelListener.response = NextLevel;
+        levelLoadedListener.response = EmptyMethod;
 
         currentLevelData.currentLevel = PlayerPrefs.GetInt("Level", 1);
 
@@ -31,18 +40,21 @@ public class AppManager : MonoBehaviour
         SceneManager.LoadScene(currentLevelData.levelData.sceneBuildIndex, LoadSceneMode.Additive);
 
         startLevelWaitTime = new WaitForSeconds(0.1f);
-        StartCoroutine(SetUpLevel());
+        lightOffWaitTime = new WaitForSeconds(currentLevelData.gameSettings.lightTurnOffDuration + 0.1f);
+        StartCoroutine(WaitRoutine(levelLoadedEvent.Raise, startLevelWaitTime));
     }
-    IEnumerator SetUpLevel()
+    IEnumerator WaitRoutine(TweenCallback onComplete, WaitForSeconds wait)
     {
-        yield return startLevelWaitTime;
-        levelLoadedEvent.Raise();
+        yield return wait;
+        onComplete();
     }
     void NextLevel()
     {
+        levelLoadedListener.response = EmptyMethod;
+
         cleanUpEvent.Raise();
 
-        int _currentBuildIndex = currentLevelData.currentLevel;
+        int _currentBuildIndex = currentLevelData.levelData.sceneBuildIndex;
 
         currentLevelData.currentLevel++;
         currentLevelData.LoadCurrentLevelData();
@@ -54,13 +66,14 @@ public class AppManager : MonoBehaviour
         }
         else
         {
-            //Isiklari kapamak lazim
-            LoadNextLevel();
+            newLevelLoadingEvent.Raise();
+            StartCoroutine(WaitRoutine(() => LoadNextLevel(_currentBuildIndex), lightOffWaitTime));
+            levelLoadedListener.response = startLevelEvent.Raise;
         }
     }
-    void LoadNextLevel()
+    void LoadNextLevel(int unloadSceneIndex)
     {
-        var _operation = SceneManager.UnloadSceneAsync(currentLevelData.levelData.sceneBuildIndex);
+        var _operation = SceneManager.UnloadSceneAsync(unloadSceneIndex);
         _operation.completed += UnloadedCurrentLevel;
     }
     void UnloadedCurrentLevel(AsyncOperation operation)
@@ -71,6 +84,11 @@ public class AppManager : MonoBehaviour
 
     void LoadedNextLevel(AsyncOperation operation)
     {
-        StartCoroutine(SetUpLevel());
+        StartCoroutine(WaitRoutine(levelLoadedEvent.Raise, startLevelWaitTime));
+    }
+
+    void EmptyMethod()
+    {
+
     }
 }

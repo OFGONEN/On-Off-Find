@@ -16,6 +16,7 @@ public class LevelManager : MonoBehaviour
     public GameEvent lightsTurnedOn;
     #endregion
     #region EventListeners
+    public EventListenerDelegateResponse newLevelLoadingListener;
     public EventListenerDelegateResponse levelLoadedListener;
     public EventListenerDelegateResponse startLevelListener;
     public EventListenerDelegateResponse startLevelInSameRoomListener;
@@ -28,6 +29,7 @@ public class LevelManager : MonoBehaviour
     private void OnEnable()
     {
         levelLoadedListener.OnEnable();
+        newLevelLoadingListener.OnEnable();
         startLevelListener.OnEnable();
         startLevelInSameRoomListener.OnEnable();
         reappearEntityListener.OnEnable();
@@ -36,6 +38,7 @@ public class LevelManager : MonoBehaviour
     private void OnDisable()
     {
         levelLoadedListener.OnDisable();
+        newLevelLoadingListener.OnDisable();
         startLevelListener.OnDisable();
         startLevelInSameRoomListener.OnDisable();
         reappearEntityListener.OnDisable();
@@ -45,6 +48,7 @@ public class LevelManager : MonoBehaviour
     private void Start()
     {
         levelLoadedListener.response = SetUpLevel;
+        newLevelLoadingListener.response = () => TurnOffLights(EmptyMethod);
         startLevelListener.response = () => MoveCameraEndPosition(EmptyMethod);
 
         startLevelInSameRoomListener.response = () =>
