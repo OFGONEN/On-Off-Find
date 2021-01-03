@@ -108,6 +108,8 @@ public class UIManager : MonoBehaviour
     }
     void LevelCompleted()
     {
+        PlayerPrefs.SetInt("Level", currentLevel.currentLevel + 1);
+
         levelInfoUI.GoStartPosition();
         countDownUI.GoStartPosition();
         backgroundUI.GoStartPosition();

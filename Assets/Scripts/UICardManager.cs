@@ -91,7 +91,7 @@ public class UICardManager : MonoBehaviour
         var _randomTrue = GiveRandomIndex(randomOrder);
         var _correctIndex = _disapperingEntityData.spriteIndex;
 
-        randomSpriteOrder.RemoveAt(_correctIndex);
+        RemoveCorrectIndexes();
         cards[_randomTrue].SetData(true, _disapperingEntityData.name, _spriteAlbum.spriteList[_correctIndex]);
 
         int _random = -1;
@@ -103,6 +103,15 @@ public class UICardManager : MonoBehaviour
             _random = GiveRandomIndex(randomSpriteOrder);
 
             cards[_randomWrong].SetData(false, string.Empty, _spriteAlbum.spriteList[_random]);
+        }
+    }
+    void RemoveCorrectIndexes()
+    {
+        var _disapperingEntityDatas = currentLevelData.levelData.disappearingEntities;
+
+        for (int i = 0; i < _disapperingEntityDatas.Length; i++)
+        {
+            randomSpriteOrder.RemoveAt(_disapperingEntityDatas[i].spriteIndex);
         }
     }
     int GiveRandomIndex(List<int> randomOrderList)
