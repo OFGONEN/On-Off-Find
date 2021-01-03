@@ -12,9 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0370dba292a61284d9647760e4be63cd, type: 3}
   m_Name: GameSettings
   m_EditorClassIdentifier: 
-  maxLevelCount: 3
+  maxLevelCount: 9
   cameraTweenDuration: 1
-  cameraTurnDegree: 10
+  cameraTurnDegree: 15
   cameraTurnMultiplier: 0.1
   uiEntityTweenDuration: 0.5
   intRoutineWaitDuration: 1
