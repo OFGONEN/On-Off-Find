@@ -15,6 +15,9 @@ public class UICardManager : MonoBehaviour
     public EventListenerDelegateResponse reappearEntityResponse;
 
     List<int> randomOrder;
+    int randomOrderCount;
+    List<int> randomSpriteOrder;
+    int randomSpriteOrderCount;
 
     private void OnEnable()
     {
@@ -37,7 +40,11 @@ public class UICardManager : MonoBehaviour
     }
     private void Awake()
     {
+        randomOrderCount = cards.Length;
+        randomSpriteOrderCount = currentLevelData.levelData.spriteAlbum.spriteList.Count;
+
         randomOrder = new List<int>(cards.Length);
+        randomSpriteOrder = new List<int>(randomSpriteOrderCount);
     }
 
     void CardsGoTarget()
@@ -75,12 +82,16 @@ public class UICardManager : MonoBehaviour
     }
     void SetCardsData()
     {
-        ResetRandom();
+        ResetRandom(randomOrder, randomOrderCount);
+        ResetRandom(randomSpriteOrder, randomSpriteOrderCount);
+
         var _disapperingEntityData = currentLevelData.levelData.disappearingEntities[disappearEntityIndex.value];
         var _spriteAlbum = currentLevelData.levelData.spriteAlbum;
 
-        var _randomTrue = GiveRandomIndex();
+        var _randomTrue = GiveRandomIndex(randomOrder);
         var _correctIndex = _disapperingEntityData.spriteIndex;
+
+        randomSpriteOrder.RemoveAt(_correctIndex);
         cards[_randomTrue].SetData(true, _disapperingEntityData.name, _spriteAlbum.spriteList[_correctIndex]);
 
         int _random = -1;
@@ -88,37 +99,27 @@ public class UICardManager : MonoBehaviour
 
         for (int i = 0; i < cards.Length - 1; i++)
         {
-            var _randomWrong = GiveRandomIndex();
+            var _randomWrong = GiveRandomIndex(randomOrder);
+            _random = GiveRandomIndex(randomSpriteOrder);
 
-            _random = GiveUniqueRandom(_random, _correctIndex, _max);
             cards[_randomWrong].SetData(false, string.Empty, _spriteAlbum.spriteList[_random]);
         }
     }
-    int GiveUniqueRandom(int random, int forbidden, int max)
+    int GiveRandomIndex(List<int> randomOrderList)
     {
-        var _random = Random.Range(0, max);
+        var _randomIndex = Random.Range(0, randomOrderList.Count);
+        var _randomValue = randomOrderList[_randomIndex];
 
-        if (random == _random || random == forbidden)
-            return GiveUniqueRandom(random, forbidden, max);
-
-        return _random;
-    }
-    int GiveRandomIndex()
-    {
-        var _randomIndex = Random.Range(0, randomOrder.Count);
-        var _randomValue = randomOrder[_randomIndex];
-
-        randomOrder.RemoveAt(_randomIndex);
-
+        randomOrderList.RemoveAt(_randomIndex);
         return _randomValue;
     }
-    void ResetRandom()
+    void ResetRandom(List<int> randomOrderList, int count)
     {
-        randomOrder.Clear();
+        randomOrderList.Clear();
 
-        for (int i = 0; i < cards.Length; i++)
+        for (int i = 0; i < count; i++)
         {
-            randomOrder.Add(i);
+            randomOrderList.Add(i);
         }
     }
 }
