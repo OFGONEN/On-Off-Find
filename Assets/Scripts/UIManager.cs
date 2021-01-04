@@ -8,13 +8,11 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     #region UIObjects
-    public UIEntity backgroundUI;
     public UISpriteImage headerImage;
     public UISpriteImage footImage;
     public UIEntity levelInfoUI;
     public TextMeshProUGUI levelInfoText;
     public UIEntity countDownUI;
-    public Image lightImage;
     public TextMeshProUGUI countDownText;
     #endregion
 
@@ -24,7 +22,6 @@ public class UIManager : MonoBehaviour
     public EventListenerDelegateResponse startLevelListener;
     public EventListenerDelegateResponse countDownTickListener;
     public EventListenerDelegateResponse countDownEndListener;
-    public EventListenerDelegateResponse lightsTurnedOnListener;
     #endregion
 
     #region Events
@@ -39,7 +36,6 @@ public class UIManager : MonoBehaviour
 
     public UISpriteAlbum headerImageAlbum;
     public UISpriteAlbum footImageAlbum;
-    public UISpriteAlbum lightImageImageAlbum;
     public CurrentLevelData currentLevel;
 
     private void OnEnable()
@@ -47,7 +43,6 @@ public class UIManager : MonoBehaviour
         tapInputListener.OnEnable();
         countDownTickListener.OnEnable();
         countDownEndListener.OnEnable();
-        lightsTurnedOnListener.OnEnable();
         levelCompleted.OnEnable();
         startLevelListener.OnEnable();
     }
@@ -57,7 +52,6 @@ public class UIManager : MonoBehaviour
         tapInputListener.OnDisable();
         countDownTickListener.OnDisable();
         countDownEndListener.OnDisable();
-        lightsTurnedOnListener.OnDisable();
         levelCompleted.OnDisable();
         startLevelListener.OnDisable();
     }
@@ -67,7 +61,6 @@ public class UIManager : MonoBehaviour
         tapInputListener.response = StartLevel;
         countDownTickListener.response = CountDownTickResponse;
         countDownEndListener.response = CountDownEndResponse;
-        lightsTurnedOnListener.response = () => lightImage.sprite = lightImageImageAlbum.GiveSprite();
         levelCompleted.response = LevelCompleted;
         startLevelListener.response = EmptyMethod;
     }
@@ -84,7 +77,6 @@ public class UIManager : MonoBehaviour
         headerImage.GoTargetPosition();
         footImage.GoTargetPosition();
 
-        backgroundUI.GoTargetPosition();
 
         startLevelEvent.Raise();
 
@@ -105,7 +97,6 @@ public class UIManager : MonoBehaviour
     void CountDownEndResponse()
     {
         countDownText.text = "00";
-        lightImage.sprite = lightImageImageAlbum.GiveSprite();
     }
     void SetLevelData()
     {
@@ -120,7 +111,6 @@ public class UIManager : MonoBehaviour
 
         levelInfoUI.GoStartPosition();
         countDownUI.GoStartPosition();
-        backgroundUI.GoStartPosition();
 
         headerImage.SetSprite(headerImageAlbum.GiveSprite());
         footImage.SetSprite(footImageAlbum.GiveSprite());
