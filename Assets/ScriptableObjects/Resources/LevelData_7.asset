@@ -13,10 +13,10 @@ MonoBehaviour:
   m_Name: LevelData_7
   m_EditorClassIdentifier: 
   sceneBuildIndex: 3
-  cameraStartPosition: {x: -2.25, y: 3, z: 3}
+  cameraStartPosition: {x: -1.209915, y: 4.144954, z: -9.421674}
   cameraEndPosition: {x: -5, y: 3, z: -7}
-  cameraStartRotation: {x: 12.3, y: -41.3, z: 0}
-  cameraEndRotation: {x: 12.3, y: -10.2, z: 0}
+  cameraStartRotation: {x: 12.3, y: 325, z: 0}
+  cameraEndRotation: {x: 12.3, y: -20, z: 0}
   ambientLightDefaultColor: {r: 1, g: 1, b: 1, a: 1}
   countdownDuration: 10
   spriteAlbum: {fileID: 11400000, guid: deac50227021bcf45b3287fde0ef5fab, type: 2}

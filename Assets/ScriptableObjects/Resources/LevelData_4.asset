@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: LevelData_4
   m_EditorClassIdentifier: 
   sceneBuildIndex: 2
-  cameraStartPosition: {x: -5, y: 3, z: -5.61}
+  cameraStartPosition: {x: -0.5119969, y: 3.802441, z: 6.041069}
   cameraEndPosition: {x: -2.25, y: 3, z: 4.25}
-  cameraStartRotation: {x: 12.3, y: 73.7, z: 0}
+  cameraStartRotation: {x: 12.3, y: 228.094, z: 0}
   cameraEndRotation: {x: 12.3, y: -120.9, z: 0}
   ambientLightDefaultColor: {r: 1, g: 1, b: 1, a: 1}
   countdownDuration: 10
