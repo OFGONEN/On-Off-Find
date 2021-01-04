@@ -109,10 +109,22 @@ public class UICardManager : MonoBehaviour
     {
         var _disapperingEntityDatas = currentLevelData.levelData.disappearingEntities;
 
-        for (int i = _disapperingEntityDatas.Length - 1; i >= 0; i--)
+        // for (int i = _disapperingEntityDatas.Length - 1; i >= 0; i--)
+        // {
+        //     if (_disapperingEntityDatas[i].spriteIndex == randomSpriteOrder[i])
+        //         randomSpriteOrder.RemoveAt(i);
+        // }
+
+        for (int x = 0; x < _disapperingEntityDatas.Length; x++)
         {
-            if (_disapperingEntityDatas[i].spriteIndex == randomSpriteOrder[i])
-                randomSpriteOrder.RemoveAt(i);
+            for (int y = 0; y < randomSpriteOrder.Count; y++)
+            {
+                if (_disapperingEntityDatas[x].spriteIndex == randomSpriteOrder[y])
+                {
+                    randomSpriteOrder.RemoveAt(y);
+                    break;
+                }
+            }
         }
     }
     int GiveRandomIndex(List<int> randomOrderList)
