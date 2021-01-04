@@ -1,12 +1,11 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using FFStudio;
 using UnityEngine.UI;
 using DG.Tweening;
 
 public class UICard : UIEntity
 {
+    public GameEvent correctAnswerSoundEvent;
     public StringGameEvent reappearEntityEvent;
     public UIImage entityImage;
     public Image cardRenderer;
@@ -20,6 +19,8 @@ public class UICard : UIEntity
     {
         if (isCorrect)
         {
+            correctAnswerSoundEvent.Raise();
+
             cardRenderer.DOColor(Color.green, 0.5f).OnComplete(
                 () =>
                 {

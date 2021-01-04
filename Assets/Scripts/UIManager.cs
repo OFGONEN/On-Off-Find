@@ -31,6 +31,7 @@ public class UIManager : MonoBehaviour
     public GameEvent startLevelEvent;
     public GameEvent confettiStart;
     public GameEvent confettiEnd;
+    public GameEvent countDownSound;
     public GameEvent nextLevelEvent;
     public IntRoutineGameEvent countDownEvent;
     #endregion
@@ -91,6 +92,8 @@ public class UIManager : MonoBehaviour
     }
     void CountDownTickResponse()
     {
+        if (countDownEvent.value == 3) countDownSound.Raise();
+
         countDownText.text = (countDownEvent.value / 10).ToString()
            + (countDownEvent.value % 10).ToString();
     }

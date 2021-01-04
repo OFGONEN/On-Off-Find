@@ -1,7 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
+﻿using UnityEngine;
 using DG.Tweening;
+using FFStudio;
 
 public class DisappearingEntity : Entity
 {
@@ -10,6 +9,7 @@ public class DisappearingEntity : Entity
 
     public ParticleObserver rightPlaceFX;
     public ParticleObserver rayFX;
+    public GameEvent rightPlaceSound;
     private void OnEnable()
     {
         disappearingEntitySet.AddDictionary(entityName, this);
@@ -58,6 +58,7 @@ public class DisappearingEntity : Entity
 
     void PlayRightPlaceFX()
     {
+        rightPlaceSound.Raise();
         rightPlaceFX.gameObject.SetActive(true);
         rightPlaceFX.particles.Play();
     }

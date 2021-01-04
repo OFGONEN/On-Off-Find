@@ -220,6 +220,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &31001429 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 134b035c0e93af843aec7a3c077450dc, type: 3}
@@ -312,6 +313,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &33195198 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: c0608dab4d71e874c9197859d3a25eaa, type: 3}
@@ -471,6 +473,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &63183017 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 5f9a66f95d8884044ba9163096adeaa1, type: 3}
@@ -1028,6 +1031,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &206434528 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 83b20edf869f6da4ebd426f093cef519, type: 3}
@@ -3017,6 +3021,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &714561190
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4110,6 +4115,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &935303055 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 3ec52e9e24d7b1f42b42ceeedec32352, type: 3}
@@ -5186,6 +5192,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &1239087818 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 8772bf451d39350449558b866ef0dc9c, type: 3}
@@ -6396,6 +6403,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &1651394958 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 1fa3c9ee7ba6b8c47ae71b55f43080f5, type: 3}
@@ -7003,6 +7011,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &1791098507 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: c8782ba1607055049947e23f11da596b, type: 3}
@@ -7424,6 +7433,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!23 &2023111321 stripped
 MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 2300000, guid: 936823a6ab75d6e408e07665c5e57206, type: 3}

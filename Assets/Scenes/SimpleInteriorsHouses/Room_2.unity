@@ -619,6 +619,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &299169770
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1363,6 +1364,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &558758968
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1456,6 +1458,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &582518026
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1689,6 +1692,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &825428306
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1900,6 +1904,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &935704865
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2470,6 +2475,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &1241768959
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2567,6 +2573,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!4 &1255922476 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400000, guid: 7743c8fe3b54b0b468837bc0140a04a5, type: 3}
@@ -2749,6 +2756,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &1340780104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3062,6 +3070,7 @@ MonoBehaviour:
   disappearedEntitySet: {fileID: 11400000, guid: 05545ab1ca80d084ab5468ae9856c896, type: 2}
   rightPlaceFX: {fileID: 0}
   rayFX: {fileID: 0}
+  rightPlaceSound: {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
 --- !u!1001 &1508787492
 PrefabInstance:
   m_ObjectHideFlags: 0
