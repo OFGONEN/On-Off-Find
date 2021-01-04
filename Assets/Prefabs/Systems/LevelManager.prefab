@@ -152,5 +152,7 @@ MonoBehaviour:
     gameEvent: {fileID: 11400000, guid: c66e8a9f72591c04191ca9cbd279ffb3, type: 2}
   reappearEntityListener:
     gameEvent: {fileID: 11400000, guid: 05e118ac272256647bc3817aab7bb64b, type: 2}
+  turnOffLightsListener:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
   countDownEndListener:
     gameEvent: {fileID: 11400000, guid: 49425c2dc9794e2469281bed91059822, type: 2}

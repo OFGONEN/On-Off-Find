@@ -22,6 +22,7 @@ public class LevelManager : MonoBehaviour
     public EventListenerDelegateResponse startLevelListener;
     public EventListenerDelegateResponse startLevelInSameRoomListener;
     public EventListenerDelegateResponse reappearEntityListener;
+    public EventListenerDelegateResponse turnOffLightsListener;
     public EventListenerDelegateResponse countDownEndListener;
     #endregion
     Camera mainCamera;
@@ -35,6 +36,7 @@ public class LevelManager : MonoBehaviour
         startLevelInSameRoomListener.OnEnable();
         reappearEntityListener.OnEnable();
         countDownEndListener.OnEnable();
+        turnOffLightsListener.OnEnable();
     }
     private void OnDisable()
     {
@@ -44,13 +46,15 @@ public class LevelManager : MonoBehaviour
         startLevelInSameRoomListener.OnDisable();
         reappearEntityListener.OnDisable();
         countDownEndListener.OnDisable();
+        turnOffLightsListener.OnDisable();
     }
 
     private void Start()
     {
         levelLoadedListener.response = SetUpLevel;
-        newLevelLoadingListener.response = () => TurnOffLights(EmptyMethod);
+        newLevelLoadingListener.response = () => TurnOffLights(EmptyMethod, currentLevelData.gameSettings.lightTurnOffDurationEndLevel);
         startLevelListener.response = () => MoveCameraEndPosition(EmptyMethod);
+        turnOffLightsListener.response = () => TurnOffLights(EmptyMethod, currentLevelData.gameSettings.lightTurnOffDuration);
 
         startLevelInSameRoomListener.response = () =>
         {
@@ -110,10 +114,12 @@ public class LevelManager : MonoBehaviour
     }
     void CountDownEndResponse()
     {
-        TurnOffLights(() =>
+        // TurnOffLights(() =>
+        // Can be DOTween Sequenced
+
         DisappearAllEntities(() =>
         StartCoroutine(WaitForSecond(() =>
-        TurnOnLights(() => lightsTurnedOn.Raise()), waitForLightTurnOff))));
+        TurnOnLights(() => lightsTurnedOn.Raise()), waitForLightTurnOff)));
 
     }
     void TurnOnLights(TweenCallback onComplete)
@@ -123,12 +129,10 @@ public class LevelManager : MonoBehaviour
         DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 1, _duration).OnComplete(onComplete);
         DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, currentLevelData.levelData.ambientLightDefaultColor, _duration);
     }
-    void TurnOffLights(TweenCallback onComplete)
+    void TurnOffLights(TweenCallback onComplete, float turnOffDuration)
     {
-        var _duration = currentLevelData.gameSettings.lightTurnOffDuration;
-
-        DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 0, _duration).OnComplete(onComplete);
-        DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, Color.black, _duration);
+        DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 0, turnOffDuration).OnComplete(onComplete);
+        DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, Color.black, turnOffDuration);
     }
     void DisappearAllEntities(TweenCallback onComplete)
     {

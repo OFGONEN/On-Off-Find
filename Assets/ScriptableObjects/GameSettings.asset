@@ -19,6 +19,7 @@ MonoBehaviour:
   uiEntityTweenDuration: 0.5
   intRoutineWaitDuration: 1
   lightTurnOnDuration: 0.5
-  lightTurnOffDuration: 0.2
+  lightTurnOffDuration: 2.5
+  lightTurnOffDurationEndLevel: 0.2
   lightTurnOffWaitDuration: 2
   fxPoolCount: 5
