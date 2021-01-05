@@ -86,6 +86,7 @@ public class Outlined_Object : MonoBehaviour
     public EventListenerDelegateResponse lightsTurnOffResponse;
     public EventListenerDelegateResponse lightsTurnedOnResponse;
     public EventListenerDelegateResponse startLevelResponse;
+    public EventListenerDelegateResponse newLevelLoadingResponse;
 
     [Header("Optional")]
 
@@ -111,6 +112,7 @@ public class Outlined_Object : MonoBehaviour
         lightsTurnedOnResponse.OnEnable();
         lightsTurnOffResponse.OnEnable();
         startLevelResponse.OnEnable();
+        newLevelLoadingResponse.OnEnable();
     }
     private void OnDisable()
     {
@@ -119,6 +121,7 @@ public class Outlined_Object : MonoBehaviour
         lightsTurnedOnResponse.OnDisable();
         lightsTurnOffResponse.OnDisable();
         startLevelResponse.OnDisable();
+        newLevelLoadingResponse.OnDisable();
     }
 
 
@@ -145,6 +148,7 @@ public class Outlined_Object : MonoBehaviour
         lightsTurnOffResponse.response = LightsTurnOffResponse;
         lightsTurnedOnResponse.response = LightTurnedOnResponse;
         startLevelResponse.response = LightTurnedOnResponse;
+        newLevelLoadingResponse.response = () => { outlineWidth = 0; UpdateMaterialProperties(); };
     }
     public void LightsTurnOffResponse()
     {
