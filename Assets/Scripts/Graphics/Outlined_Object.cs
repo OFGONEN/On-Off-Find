@@ -146,7 +146,8 @@ public class Outlined_Object : MonoBehaviour
     private void Start()
     {
         lightsTurnOffResponse.response = LightsTurnOffResponse;
-        lightsTurnedOnResponse.response = LightTurnedOnResponse;
+        lightsTurnedOnResponse.response = EmptyMethod;
+        // lightsTurnedOnResponse.response = LightTurnedOnResponse;
         startLevelResponse.response = LightTurnedOnResponse;
         newLevelLoadingResponse.response = () => { outlineWidth = 0; UpdateMaterialProperties(); };
     }
@@ -302,5 +303,10 @@ public class Outlined_Object : MonoBehaviour
         //}
 
         rend.SetPropertyBlock(materialPropertyBlock);
+    }
+
+    void EmptyMethod()
+    {
+
     }
 }
