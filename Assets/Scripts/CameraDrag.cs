@@ -14,7 +14,7 @@ public class CameraDrag : MonoBehaviour
     public LeanManualRotate cameraRotator;
     Vector3 endRotation;
     Vector2 dragDelta;
-    float[] clampValues;
+    [HideInInspector] public float[] clampValues;
 
     public delegate void UpdateMethod();
     UpdateMethod cameraUpdate;

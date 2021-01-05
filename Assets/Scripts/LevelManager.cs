@@ -26,6 +26,7 @@ public class LevelManager : MonoBehaviour
     public EventListenerDelegateResponse countDownEndListener;
     #endregion
     Camera mainCamera;
+    CameraDrag cameraDrag;
     WaitForSeconds waitForLightTurnOff;
 
     private void OnEnable()
@@ -51,6 +52,9 @@ public class LevelManager : MonoBehaviour
 
     private void Start()
     {
+        mainCamera = Camera.main;
+        cameraDrag = mainCamera.GetComponent<CameraDrag>();
+
         levelLoadedListener.response = SetUpLevel;
         newLevelLoadingListener.response = () => TurnOffLights(EmptyMethod, currentLevelData.gameSettings.lightTurnOffDurationEndLevel);
         startLevelListener.response = () => MoveCameraEndPosition(EmptyMethod);
@@ -79,7 +83,6 @@ public class LevelManager : MonoBehaviour
         var _levelData = currentLevelData.levelData;
         var _settings = currentLevelData.gameSettings;
 
-        mainCamera = Camera.main;
         mainCamera.transform.position = _levelData.cameraStartPosition;
         mainCamera.transform.rotation = Quaternion.Euler(_levelData.cameraStartRotation);
 
@@ -150,6 +153,15 @@ public class LevelManager : MonoBehaviour
         DisappearingEntity _entity;
         disappearedEntitySet.itemDictionary.TryGetValue(reappearEntity, out _entity);
         _entity.Reappear();
+
+        var _targetRot = Quaternion.LookRotation(_entity.transform.position - mainCamera.transform.position).eulerAngles;
+        var _cameraRot = mainCamera.transform.rotation.eulerAngles;
+
+        _targetRot.x = _cameraRot.x;
+        _targetRot.z = _cameraRot.z;
+        _targetRot.y = Mathf.Clamp(_targetRot.y, cameraDrag.clampValues[0], cameraDrag.clampValues[1]);
+
+        mainCamera.transform.DORotate(_targetRot, 0.25f);
     }
 
     IEnumerator WaitForSecond(TweenCallback onComplete, WaitForSeconds wait)
