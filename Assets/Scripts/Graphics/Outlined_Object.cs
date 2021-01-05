@@ -146,12 +146,12 @@ public class Outlined_Object : MonoBehaviour
         lightsTurnedOnResponse.response = LightTurnedOnResponse;
         startLevelResponse.response = LightTurnedOnResponse;
     }
-    void LightsTurnOffResponse()
+    public void LightsTurnOffResponse()
     {
         // DOTween.To(() => outlineWidth, x => outlineWidth = x, 0, gameSettings.outlineTurnOffDuration).SetEase(gameSettings.outlineTurnOffCurve).OnUpdate(UpdateMaterialProperties);
         DOTween.To(() => outlineWidth, x => outlineWidth = x, 0, gameSettings.outlineTurnOffDuration).OnUpdate(UpdateMaterialProperties);
     }
-    void LightTurnedOnResponse()
+    public void LightTurnedOnResponse()
     {
         DOTween.To(() => outlineWidth, x => outlineWidth = x, defaultOutLineWidth, 0.2f).OnUpdate(UpdateMaterialProperties);
     }

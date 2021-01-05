@@ -10,6 +10,8 @@ public class DisappearingEntity : Entity
     public ParticleObserver rightPlaceFX;
     public ParticleObserver rayFX;
     public GameEvent rightPlaceSound;
+
+    Outlined_Object outline;
     private void OnEnable()
     {
         disappearingEntitySet.AddDictionary(entityName, this);
@@ -17,6 +19,10 @@ public class DisappearingEntity : Entity
     private void OnDisable()
     {
         disappearingEntitySet.RemoveDictionary(entityName);
+    }
+    private void Start()
+    {
+        outline = GetComponent<Outlined_Object>();
     }
     public void SetFX()
     {
@@ -43,6 +49,8 @@ public class DisappearingEntity : Entity
     {
         gameObject.SetActive(true);
         disappearedEntitySet.RemoveDictionary(entityName);
+
+        outline.LightTurnedOnResponse(); // Reapper Outline
 
         var _big = new Vector3(1.15f, 1.15f, 1.15f);
         var _mid = new Vector3(0.75f, 0.75f, 0.75f);
