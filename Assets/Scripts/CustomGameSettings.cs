@@ -12,6 +12,9 @@ public class CustomGameSettings : GameSettings
     public float cameraTurnMultiplier;
     public float uiEntityTweenDuration;
     public int intRoutineWaitDuration;
+    public float outlineTurnOffDuration;
+    public AnimationCurve outlineTurnOffCurve;
+    public AnimationCurve lightTurnOffCurve;
     public float lightTurnOnDuration;
     public float lightTurnOffDuration;
     public float lightTurnOffDurationEndLevel;

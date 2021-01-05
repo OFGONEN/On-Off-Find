@@ -140,8 +140,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -628,8 +636,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -1106,8 +1122,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -1651,8 +1675,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -2140,8 +2172,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -2530,8 +2570,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -3374,8 +3422,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -4151,8 +4207,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 12
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -4541,8 +4605,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -4961,6 +5033,10 @@ PrefabInstance:
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2300000, guid: d2bf346fdfc6bd44b855c94fb4be3ee2, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 5768831b69f969c4b9b54ca8a426e355, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d2bf346fdfc6bd44b855c94fb4be3ee2, type: 3}
 --- !u!1001 &298735813
@@ -5449,8 +5525,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -5839,8 +5923,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -6338,8 +6430,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -6922,8 +7022,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -7765,8 +7873,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -8321,8 +8437,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -8864,8 +8988,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -9402,8 +9534,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -10031,8 +10171,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -10584,8 +10732,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -11518,8 +11674,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -12204,8 +12368,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -12814,8 +12986,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -13760,8 +13940,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -14212,8 +14400,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -14612,8 +14808,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -15002,8 +15206,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -15392,8 +15604,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -16131,8 +16351,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -16575,8 +16803,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -16980,8 +17216,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -17521,8 +17765,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -18042,8 +18294,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -18500,8 +18760,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -19256,8 +19524,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -19646,8 +19922,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -20489,8 +20773,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -21029,8 +21321,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -21419,8 +21719,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -21829,8 +22137,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -22528,8 +22844,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -22918,8 +23242,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 7
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}
@@ -23396,8 +23728,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fd36019c063264a4db5792e99d91e7a8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  outlinedObjectSet: {fileID: 11400000, guid: e9c2aa82a3007bf4db7e28e2f1f46279, type: 2}
   outlineColor: {r: 1, g: 1, b: 1, a: 1}
   outlineWidth: 14
+  gameSettings: {fileID: 11400000, guid: c024e1f37c5b26b49b98c9e052b610c2, type: 2}
+  lightsTurnOffResponse:
+    gameEvent: {fileID: 11400000, guid: dd8298804d8bf3312a71aca7a3dc02b3, type: 2}
+  lightsTurnedOnResponse:
+    gameEvent: {fileID: 11400000, guid: 4c27c0ce8cfa90441bcb62c0afd17fe3, type: 2}
+  startLevelResponse:
+    gameEvent: {fileID: 11400000, guid: 46cccec47341a29488d59ee010fcfe6c, type: 2}
   precomputeOutline: 1
   bakeKeys:
   - {fileID: 4300000, guid: 5058a1e0e1926d843864a44783a32155, type: 3}

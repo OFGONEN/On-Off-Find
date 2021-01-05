@@ -18,6 +18,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using FFStudio;
+using DG.Tweening;
 
 [DisallowMultipleComponent]
 
@@ -73,10 +75,17 @@ public class Outlined_Object : MonoBehaviour
     //[SerializeField]
     //private Mode outlineMode;
 
+    public OutlinedObjectSet outlinedObjectSet;
     [SerializeField]
     private Color outlineColor = Color.white;
 
     public float outlineWidth = 2f;
+    float defaultOutLineWidth;
+    public CustomGameSettings gameSettings;
+
+    public EventListenerDelegateResponse lightsTurnOffResponse;
+    public EventListenerDelegateResponse lightsTurnedOnResponse;
+    public EventListenerDelegateResponse startLevelResponse;
 
     [Header("Optional")]
 
@@ -96,12 +105,31 @@ public class Outlined_Object : MonoBehaviour
 
     private bool needsUpdate;
 
+    private void OnEnable()
+    {
+        outlinedObjectSet.AddDictionary(GetInstanceID(), this);
+        lightsTurnedOnResponse.OnEnable();
+        lightsTurnOffResponse.OnEnable();
+        startLevelResponse.OnEnable();
+    }
+    private void OnDisable()
+    {
+        outlinedObjectSet.RemoveDictionary(GetInstanceID());
+
+        lightsTurnedOnResponse.OnDisable();
+        lightsTurnOffResponse.OnDisable();
+        startLevelResponse.OnDisable();
+    }
+
+
     private void Awake()
     {
+        defaultOutLineWidth = outlineWidth;
+        outlineWidth = 0;
         // Cache renderer.
-        rend = GetComponent< Renderer >();
+        rend = GetComponent<Renderer>();
 
-        rend.material = Resources.Load<Material>( "Materials/Outlined_Object" );
+        rend.material = Resources.Load<Material>("Materials/Outlined_Object");
 
         materialPropertyBlock = new MaterialPropertyBlock();
 
@@ -112,26 +140,42 @@ public class Outlined_Object : MonoBehaviour
         needsUpdate = true;
     }
 
+    private void Start()
+    {
+        lightsTurnOffResponse.response = LightsTurnOffResponse;
+        lightsTurnedOnResponse.response = LightTurnedOnResponse;
+        startLevelResponse.response = LightTurnedOnResponse;
+    }
+    void LightsTurnOffResponse()
+    {
+        // DOTween.To(() => outlineWidth, x => outlineWidth = x, 0, gameSettings.outlineTurnOffDuration).SetEase(gameSettings.outlineTurnOffCurve).OnUpdate(UpdateMaterialProperties);
+        DOTween.To(() => outlineWidth, x => outlineWidth = x, 0, gameSettings.outlineTurnOffDuration).OnUpdate(UpdateMaterialProperties);
+    }
+    void LightTurnedOnResponse()
+    {
+        DOTween.To(() => outlineWidth, x => outlineWidth = x, defaultOutLineWidth, 0.2f).OnUpdate(UpdateMaterialProperties);
+    }
+
     private void OnValidate()
     {
         // Update material properties.
         needsUpdate = true;
 
         // Clear cache when baking is disabled or corrupted.
-        if( !precomputeOutline && bakeKeys.Count != 0 || bakeKeys.Count != bakeValues.Count )
+        if (!precomputeOutline && bakeKeys.Count != 0 || bakeKeys.Count != bakeValues.Count)
         {
             bakeKeys.Clear();
             bakeValues.Clear();
         }
 
         // Generate smooth normals when baking is enabled.
-        if( precomputeOutline && bakeKeys.Count == 0 )
+        if (precomputeOutline && bakeKeys.Count == 0)
             Bake();
     }
 
     private void Update()
     {
-        if( needsUpdate )
+        if (needsUpdate)
         {
             needsUpdate = false;
 
@@ -144,71 +188,71 @@ public class Outlined_Object : MonoBehaviour
         // Generate smooth normals for each mesh.
         var bakedMeshes = new HashSet<Mesh>();
 
-        foreach( var meshFilter in GetComponentsInChildren<MeshFilter>() )
+        foreach (var meshFilter in GetComponentsInChildren<MeshFilter>())
         {
             // Skip duplicates.
-            if( !bakedMeshes.Add( meshFilter.sharedMesh ) )
+            if (!bakedMeshes.Add(meshFilter.sharedMesh))
                 continue;
 
             // Serialize smooth normals.
-            var smoothNormals = SmoothNormals( meshFilter.sharedMesh );
+            var smoothNormals = SmoothNormals(meshFilter.sharedMesh);
 
-            bakeKeys.Add( meshFilter.sharedMesh );
-            bakeValues.Add( new ListVector3() { data = smoothNormals } );
+            bakeKeys.Add(meshFilter.sharedMesh);
+            bakeValues.Add(new ListVector3() { data = smoothNormals });
         }
     }
 
     private void LoadSmoothNormals()
     {
         // Retrieve or generate smooth normals.
-        foreach( var meshFilter in GetComponentsInChildren<MeshFilter>() )
+        foreach (var meshFilter in GetComponentsInChildren<MeshFilter>())
         {
             // Skip if smooth normals have already been adopted.
-            if( !registeredMeshes.Add( meshFilter.sharedMesh ) )
+            if (!registeredMeshes.Add(meshFilter.sharedMesh))
                 continue;
 
             // Retrieve or generate smooth normals.
-            var index = bakeKeys.IndexOf( meshFilter.sharedMesh );
-            var smoothNormals = ( index >= 0 ) ? bakeValues[ index ].data : SmoothNormals( meshFilter.sharedMesh );
+            var index = bakeKeys.IndexOf(meshFilter.sharedMesh);
+            var smoothNormals = (index >= 0) ? bakeValues[index].data : SmoothNormals(meshFilter.sharedMesh);
 
             // Store smooth normals in UV3.
-            meshFilter.sharedMesh.SetUVs( 3, smoothNormals );
+            meshFilter.sharedMesh.SetUVs(3, smoothNormals);
         }
 
         // Clear UV3 on skinned mesh renderers
-        foreach( var skinnedMeshRenderer in GetComponentsInChildren<SkinnedMeshRenderer>() )
+        foreach (var skinnedMeshRenderer in GetComponentsInChildren<SkinnedMeshRenderer>())
         {
-            if( registeredMeshes.Add( skinnedMeshRenderer.sharedMesh ) )
-                skinnedMeshRenderer.sharedMesh.uv4 = new Vector2[ skinnedMeshRenderer.sharedMesh.vertexCount ];
+            if (registeredMeshes.Add(skinnedMeshRenderer.sharedMesh))
+                skinnedMeshRenderer.sharedMesh.uv4 = new Vector2[skinnedMeshRenderer.sharedMesh.vertexCount];
         }
     }
 
-    private List< Vector3 > SmoothNormals( Mesh mesh )
+    private List<Vector3> SmoothNormals(Mesh mesh)
     {
         // Group vertices by location.
-        var groups = mesh.vertices.Select( ( vertex, index ) => new KeyValuePair<Vector3, int>( vertex, index ) ).GroupBy( pair => pair.Key );
+        var groups = mesh.vertices.Select((vertex, index) => new KeyValuePair<Vector3, int>(vertex, index)).GroupBy(pair => pair.Key);
 
         // Copy normals to a new list.
-        var smoothNormals = new List<Vector3>( mesh.normals );
+        var smoothNormals = new List<Vector3>(mesh.normals);
 
         // Average normals for grouped vertices.
-        foreach( var group in groups )
+        foreach (var group in groups)
         {
             // Skip single vertices.
-            if( group.Count() == 1 )
+            if (group.Count() == 1)
                 continue;
 
             // Calculate the average normal.
             var smoothNormal = Vector3.zero;
 
-            foreach( var pair in group )
-                smoothNormal += mesh.normals[ pair.Value ];
+            foreach (var pair in group)
+                smoothNormal += mesh.normals[pair.Value];
 
             smoothNormal.Normalize();
 
             // Assign smooth normal to each vertex.
-            foreach( var pair in group )
-                smoothNormals[ pair.Value ] = smoothNormal;
+            foreach (var pair in group)
+                smoothNormals[pair.Value] = smoothNormal;
         }
 
         return smoothNormals;
@@ -217,15 +261,15 @@ public class Outlined_Object : MonoBehaviour
     private void UpdateMaterialProperties()
     {
         // Apply properties according to mode.
-        rend.GetPropertyBlock( materialPropertyBlock );
-        materialPropertyBlock.SetColor( "_OutlineColor", outlineColor );
+        rend.GetPropertyBlock(materialPropertyBlock);
+        materialPropertyBlock.SetColor("_OutlineColor", outlineColor);
 
         //switch( outlineMode )
         //{
         //    case Mode.OutlineAll:
-                materialPropertyBlock.SetFloat( "_MaskZTest", ( float )UnityEngine.Rendering.CompareFunction.Always );
-                materialPropertyBlock.SetFloat( "_FillZTest", ( float )UnityEngine.Rendering.CompareFunction.Always );
-                materialPropertyBlock.SetFloat( "_OutlineWidth", outlineWidth );
+        materialPropertyBlock.SetFloat("_MaskZTest", (float)UnityEngine.Rendering.CompareFunction.Always);
+        materialPropertyBlock.SetFloat("_FillZTest", (float)UnityEngine.Rendering.CompareFunction.Always);
+        materialPropertyBlock.SetFloat("_OutlineWidth", outlineWidth);
         //        break;
 
         //    case Mode.OutlineVisible:
@@ -253,6 +297,6 @@ public class Outlined_Object : MonoBehaviour
         //        break;
         //}
 
-        rend.SetPropertyBlock( materialPropertyBlock );
+        rend.SetPropertyBlock(materialPropertyBlock);
     }
 }

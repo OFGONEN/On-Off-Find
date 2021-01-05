@@ -134,7 +134,11 @@ public class LevelManager : MonoBehaviour
     }
     void TurnOffLights(TweenCallback onComplete, float turnOffDuration)
     {
+        // var _curve = currentLevelData.gameSettings.lightTurnOffCurve;
+        // DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 0, turnOffDuration).SetEase(_curve).OnComplete(onComplete);
         DOTween.To(() => globalLight.intensity, x => globalLight.intensity = x, 0, turnOffDuration).OnComplete(onComplete);
+
+        // DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, Color.black, turnOffDuration).SetEase(_curve);
         DOTween.To(() => RenderSettings.ambientLight, x => RenderSettings.ambientLight = x, Color.black, turnOffDuration);
     }
     void DisappearAllEntities(TweenCallback onComplete)

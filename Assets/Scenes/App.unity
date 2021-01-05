@@ -1197,6 +1197,7 @@ MonoBehaviour:
     gameEvent: {fileID: 11400000, guid: 7cdc814074b1f2546bfaa74b096fcceb, type: 2}
   currentLevel: {fileID: 11400000, guid: 9f08cd836ce2a814798ec4563c585c29, type: 2}
   cameraRotator: {fileID: 519420035}
+  clampValues: []
 --- !u!114 &519420035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2721,6 +2722,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 9029336008977268052, guid: 36b6a14ee824d254585c520926df9f40, type: 3}
+      propertyPath: lightTurnOffCurve.m_Curve.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029336008977268052, guid: 36b6a14ee824d254585c520926df9f40, type: 3}
+      propertyPath: lightTurnOffCurve.m_Curve.Array.data[1].time
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029336008977268052, guid: 36b6a14ee824d254585c520926df9f40, type: 3}
+      propertyPath: lightTurnOffCurve.m_Curve.Array.data[0].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029336008977268052, guid: 36b6a14ee824d254585c520926df9f40, type: 3}
+      propertyPath: lightTurnOffCurve.m_Curve.Array.data[1].value
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029336008977268052, guid: 36b6a14ee824d254585c520926df9f40, type: 3}
+      propertyPath: lightTurnOffCurve.m_Curve.Array.data[0].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
+    - target: {fileID: 9029336008977268052, guid: 36b6a14ee824d254585c520926df9f40, type: 3}
+      propertyPath: lightTurnOffCurve.m_Curve.Array.data[1].tangentMode
+      value: 34
+      objectReference: {fileID: 0}
     - target: {fileID: 9029336008977268054, guid: 36b6a14ee824d254585c520926df9f40, type: 3}
       propertyPath: m_Name
       value: LevelManager
