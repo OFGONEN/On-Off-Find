@@ -16,7 +16,7 @@ MonoBehaviour:
   cameraStartPosition: {x: -5, y: 3, z: 4.25}
   cameraEndPosition: {x: -5, y: 3, z: -5.61}
   cameraStartRotation: {x: 12.3, y: -75, z: 0}
-  cameraEndRotation: {x: 12.3, y: 88.7, z: 0}
+  cameraEndRotation: {x: 12.3, y: 85, z: 0}
   ambientLightDefaultColor: {r: 1, g: 1, b: 1, a: 1}
   countdownDuration: 10
   spriteAlbum: {fileID: 11400000, guid: deac50227021bcf45b3287fde0ef5fab, type: 2}
