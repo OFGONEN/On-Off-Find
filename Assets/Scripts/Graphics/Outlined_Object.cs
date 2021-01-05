@@ -76,8 +76,7 @@ public class Outlined_Object : MonoBehaviour
     [SerializeField]
     private Color outlineColor = Color.white;
 
-    [SerializeField, Range(0f, 10f)]
-    private float outlineWidth = 2f;
+    public float outlineWidth = 2f;
 
     [Header("Optional")]
 
@@ -97,7 +96,7 @@ public class Outlined_Object : MonoBehaviour
 
     private bool needsUpdate;
 
-    void Awake()
+    private void Awake()
     {
         // Cache renderer.
         rend = GetComponent< Renderer >();
@@ -113,7 +112,7 @@ public class Outlined_Object : MonoBehaviour
         needsUpdate = true;
     }
 
-    void OnValidate()
+    private void OnValidate()
     {
         // Update material properties.
         needsUpdate = true;
@@ -130,7 +129,7 @@ public class Outlined_Object : MonoBehaviour
             Bake();
     }
 
-    void Update()
+    private void Update()
     {
         if( needsUpdate )
         {
@@ -140,7 +139,7 @@ public class Outlined_Object : MonoBehaviour
         }
     }
 
-    void Bake()
+    private void Bake()
     {
         // Generate smooth normals for each mesh.
         var bakedMeshes = new HashSet<Mesh>();
@@ -159,7 +158,7 @@ public class Outlined_Object : MonoBehaviour
         }
     }
 
-    void LoadSmoothNormals()
+    private void LoadSmoothNormals()
     {
         // Retrieve or generate smooth normals.
         foreach( var meshFilter in GetComponentsInChildren<MeshFilter>() )
@@ -184,7 +183,7 @@ public class Outlined_Object : MonoBehaviour
         }
     }
 
-    List<Vector3> SmoothNormals( Mesh mesh )
+    private List< Vector3 > SmoothNormals( Mesh mesh )
     {
         // Group vertices by location.
         var groups = mesh.vertices.Select( ( vertex, index ) => new KeyValuePair<Vector3, int>( vertex, index ) ).GroupBy( pair => pair.Key );
@@ -215,7 +214,7 @@ public class Outlined_Object : MonoBehaviour
         return smoothNormals;
     }
 
-    void UpdateMaterialProperties()
+    private void UpdateMaterialProperties()
     {
         // Apply properties according to mode.
         rend.GetPropertyBlock( materialPropertyBlock );
