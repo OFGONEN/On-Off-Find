@@ -145,7 +145,7 @@ public class UISwipeTutorial : MonoBehaviour
     }
     void ChooseCorrectOne()
     {
-        messageText.text = "Choose what is missing!";
+        messageText.text = "Which item went missing?";
         messageText.rectTransform.position = chooseTextTargetTransform.position;
         messageText.rectTransform.DOScale(Vector3.one, 0.4f).OnComplete(ChooseMissinHover);
     }
