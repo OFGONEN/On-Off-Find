@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using NaughtyAttributes;
 using UnityEngine;
 
 
@@ -7,8 +8,8 @@ namespace FFStudio
 {
     public abstract class RuntimeSet<TKey, TValue> : ScriptableObject
     {
-        public List<TValue> itemList = new List<TValue>();
-        public Dictionary<TKey, TValue> itemDictionary = new Dictionary<TKey, TValue>();
+        public List<TValue> itemList = new List<TValue>(128);
+        public Dictionary<TKey, TValue> itemDictionary = new Dictionary<TKey, TValue>(128);
 
         public void AddList(TValue value)
         {
@@ -34,10 +35,28 @@ namespace FFStudio
             itemDictionary.Remove(key);
         }
 
+        [Button]
         public void ClearSet()
         {
             itemList.Clear();
             itemDictionary.Clear();
+        }
+        [Button]
+        public void LogList()
+        {
+            foreach (var item in itemList)
+            {
+                Debug.Log(item.ToString());
+            }
+        }
+
+        [Button]
+        public void LogDictionary()
+        {
+            foreach (var item in itemDictionary.Values)
+            {
+                Debug.Log(item.ToString());
+            }
         }
     }
 }

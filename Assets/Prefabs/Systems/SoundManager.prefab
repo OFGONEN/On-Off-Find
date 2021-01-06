@@ -43,4 +43,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7a40a8fe3c6dfb468f278f64926f091, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  soundEvents: []
+  soundEvents:
+  - {fileID: 11400000, guid: 6adad8ecdbd33bd6d8a5b5786772d9a9, type: 2}
+  - {fileID: 11400000, guid: 70394d72c9fc9d52ca8d217dc7ced09a, type: 2}
+  - {fileID: 11400000, guid: 9bb6a3e204a7be758b9e1de3db9e9bfc, type: 2}
