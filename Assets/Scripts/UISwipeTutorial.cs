@@ -34,6 +34,7 @@ public class UISwipeTutorial : MonoBehaviour
 
     bool leftArrowChecked;
     bool rightArrowChecked;
+    bool tutorialActive;
     int countDownTick = 0;
     Sequence chooseSequence;
 
@@ -80,13 +81,14 @@ public class UISwipeTutorial : MonoBehaviour
     {
         countDownTick++;
 
-        if (countDownTick == currentLevel.levelData.countdownDuration / 2)
+        if (tutorialActive && countDownTick == currentLevel.levelData.countdownDuration / 2)
         {
             countDownTickResponse.OnDisable();
 
             tutorialEndCheck = EmptyMethod;
             leftArrowChecked = false;
             rightArrowChecked = false;
+            tutorialActive = false;
             EndSwipeTutorial();
         }
     }
@@ -108,6 +110,7 @@ public class UISwipeTutorial : MonoBehaviour
 
         leftArrowChecked = false;
         rightArrowChecked = false;
+        tutorialActive = true;
         countDownTick = 0;
 
         countDownTickResponse.response = CountDownTickResponse;
@@ -131,38 +134,43 @@ public class UISwipeTutorial : MonoBehaviour
     {
         messageText.text = "You can still Look Around";
         messageText.gameObject.SetActive(true);
-
+        messageText.rectTransform.DOScale(Vector3.one, 0.4f).OnComplete(LookAroundHover);
+    }
+    void LookAroundHover()
+    {
         var _sequence = DOTween.Sequence();
         _sequence.Append(messageText.rectTransform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.4f));
         _sequence.Append(messageText.rectTransform.DOScale(Vector3.one, 0.4f));
-        _sequence.SetLoops(3, LoopType.Restart).OnComplete(() => messageText.rectTransform.DOScale(Vector3.zero, 0.4f).OnComplete(ChooseCorrectOne));
+        _sequence.SetLoops(3, LoopType.Yoyo).OnComplete(() => messageText.rectTransform.DOScale(Vector3.zero, 0.4f).OnComplete(ChooseCorrectOne));
     }
     void ChooseCorrectOne()
     {
         messageText.text = "Choose what is missing!";
         messageText.rectTransform.position = chooseTextTargetTransform.position;
-
+        messageText.rectTransform.DOScale(Vector3.one, 0.4f).OnComplete(ChooseMissinHover);
+    }
+    void ChooseMissinHover()
+    {
         chooseSequence = DOTween.Sequence();
         chooseSequence.Append(messageText.rectTransform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.4f));
         chooseSequence.Append(messageText.rectTransform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 0.4f));
-        chooseSequence.SetLoops(-1, LoopType.Restart);
+        chooseSequence.SetLoops(-1, LoopType.Yoyo);
     }
     void MissingText()
     {
-        Debug.Log(messageText.rectTransform.localScale);
         var _sequence = DOTween.Sequence();
         _sequence.Append(messageText.rectTransform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.4f));
         _sequence.Append(messageText.rectTransform.DOScale(Vector3.one, 0.4f));
-        _sequence.SetLoops(6, LoopType.Restart).OnComplete(RememberText);
+        _sequence.SetLoops(6, LoopType.Yoyo).OnComplete(RememberText);
     }
     void RememberText()
     {
         messageText.text = "Try to remember!!";
 
         var _sequenceRemember = DOTween.Sequence();
-        _sequenceRemember.Append(messageText.rectTransform.DOScale(Vector3.one, 0.5f));
-        _sequenceRemember.AppendInterval(1f);
-        _sequenceRemember.Append(messageText.rectTransform.DOScale(Vector3.zero, 0.25f));
+        _sequenceRemember.Append(messageText.rectTransform.DOScale(Vector3.one, 0.25f));
+        _sequenceRemember.AppendInterval(1.25f);
+        _sequenceRemember.Append(messageText.rectTransform.DOScale(Vector3.zero, 0.15f));
         _sequenceRemember.OnComplete(() => messageText.gameObject.SetActive(false));
     }
     void EndSwipeTutorial()
@@ -183,6 +191,7 @@ public class UISwipeTutorial : MonoBehaviour
             tutorialEndCheck = EmptyMethod;
             leftArrowChecked = false;
             rightArrowChecked = false;
+            tutorialActive = false;
             EndSwipeTutorial();
         }
     }

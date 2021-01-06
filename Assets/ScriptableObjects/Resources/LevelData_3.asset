@@ -18,7 +18,7 @@ MonoBehaviour:
   cameraStartRotation: {x: 12.3, y: 73.7, z: 0}
   cameraEndRotation: {x: 12.3, y: 197.7, z: 0}
   ambientLightDefaultColor: {r: 1, g: 1, b: 1, a: 1}
-  countdownDuration: 10
+  countdownDuration: 15
   spriteAlbum: {fileID: 11400000, guid: deac50227021bcf45b3287fde0ef5fab, type: 2}
   disappearingEntities:
   - name: D_Prop_Computer_Screen
