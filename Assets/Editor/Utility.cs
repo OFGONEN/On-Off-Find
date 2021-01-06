@@ -42,7 +42,7 @@ namespace FFEditor
             switch (change)
             {
                 case PlayModeStateChange.ExitingPlayMode:
-                    DOTween.KillAll();
+                    // DOTween.KillAll();
                     break;
                 case PlayModeStateChange.ExitingEditMode:
                     break;
