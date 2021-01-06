@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using FFStudio;
 using TMPro;
-using UnityEngine.UI;
+using ElephantSDK;
 
 public class UIManager : MonoBehaviour
 {
@@ -82,6 +82,7 @@ public class UIManager : MonoBehaviour
 
         countDownEvent.value = currentLevel.levelData.countdownDuration;
         countDownEvent.StartRoutine(this);
+        Elephant.LevelStarted(currentLevel.currentLevel);
     }
     void CountDownTickResponse()
     {

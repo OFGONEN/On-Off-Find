@@ -5,6 +5,7 @@ using DG.Tweening;
 
 public class UICard : UIEntity
 {
+    public CustomCurrentLevelData currentLevelData;
     public GameEvent correctAnswerSoundEvent;
     public StringGameEvent reappearEntityEvent;
     public UIImage entityImage;
@@ -19,6 +20,7 @@ public class UICard : UIEntity
     {
         if (isCorrect)
         {
+            ElephantSDK.Elephant.LevelCompleted(currentLevelData.currentLevel);
             correctAnswerSoundEvent.Raise();
 
             cardRenderer.DOColor(Color.green, 0.5f).OnComplete(
@@ -32,6 +34,7 @@ public class UICard : UIEntity
         else
         {
             cardRenderer.DOColor(Color.red, 0.5f).OnComplete(() => GoStartPosition());
+            ElephantSDK.Elephant.LevelFailed(currentLevelData.currentLevel);
         }
 
         cardButton.interactable = false;
