@@ -6,6 +6,7 @@ using DG.Tweening;
 public class UICard : UIEntity
 {
     public CustomCurrentLevelData currentLevelData;
+    public EventListenerDelegateResponse entityReappearedResponse;
     public GameEvent correctAnswerSoundEvent;
     public StringGameEvent reappearEntityEvent;
     public UIImage entityImage;
@@ -16,6 +17,21 @@ public class UICard : UIEntity
     public string disappearingEntityName;
     [HideInInspector]
     public bool isCorrect;
+
+    private void OnEnable()
+    {
+        entityReappearedResponse.OnEnable();
+    }
+    private void OnDisable()
+    {
+
+        entityReappearedResponse.OnDisable();
+    }
+    public override void Start()
+    {
+        base.Start();
+        entityReappearedResponse.response = ChoosedCorrectCard;
+    }
     public void OnChoose()
     {
         if (isCorrect)
@@ -26,6 +42,7 @@ public class UICard : UIEntity
             cardRenderer.DOColor(Color.green, 0.5f).OnComplete(
                 () =>
                 {
+                    entityReappearedResponse.response = EmptyMethod;
                     reappearEntityEvent.value = disappearingEntityName;
                     reappearEntityEvent.Raise();
                 }
@@ -44,8 +61,19 @@ public class UICard : UIEntity
         cardRenderer.color = Color.white;
         cardButton.interactable = true;
 
+        entityReappearedResponse.response = ChoosedCorrectCard;
+
         isCorrect = correct;
         disappearingEntityName = entityName;
         entityImage.SetSprite(entitySprite);
+    }
+
+    void ChoosedCorrectCard()
+    {
+        cardButton.interactable = false;
+    }
+    void EmptyMethod()
+    {
+
     }
 }

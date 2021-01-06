@@ -95,6 +95,8 @@ MonoBehaviour:
   destinationTransform: {fileID: 0}
   startPosition: {x: 0, y: 0, z: 0}
   currentLevelData: {fileID: 11400000, guid: 9f08cd836ce2a814798ec4563c585c29, type: 2}
+  entityReappearedResponse:
+    gameEvent: {fileID: 11400000, guid: 05e118ac272256647bc3817aab7bb64b, type: 2}
   correctAnswerSoundEvent: {fileID: 11400000, guid: 6adad8ecdbd33bd6d8a5b5786772d9a9, type: 2}
   reappearEntityEvent: {fileID: 11400000, guid: 05e118ac272256647bc3817aab7bb64b, type: 2}
   entityImage: {fileID: 6298382391155398356}
