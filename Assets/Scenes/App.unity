@@ -1341,7 +1341,7 @@ MonoBehaviour:
   Target: {fileID: 0}
   Space: 0
   AxisA: {x: 0, y: -1, z: 0}
-  AxisB: {x: 1, y: 0, z: 0}
+  AxisB: {x: 0, y: 0, z: 0}
   Multiplier: 1
   Dampening: 10
   ScaleByTime: 0
