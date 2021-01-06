@@ -153,7 +153,7 @@ public class UISwipeTutorial : MonoBehaviour
     {
         chooseSequence = DOTween.Sequence();
         chooseSequence.Append(messageText.rectTransform.DOScale(new Vector3(1.1f, 1.1f, 1.1f), 0.4f));
-        chooseSequence.Append(messageText.rectTransform.DOScale(new Vector3(0.5f, 0.5f, 0.5f), 0.4f));
+        chooseSequence.Append(messageText.rectTransform.DOScale(new Vector3(0.8f, 0.8f, 0.8f), 0.4f));
         chooseSequence.SetLoops(-1, LoopType.Yoyo);
     }
     void MissingText()
